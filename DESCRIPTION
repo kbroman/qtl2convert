@@ -2,8 +2,7 @@ Package: qtl2convert
 Version: 0.1-1
 Date: 2016-03-15
 Title: Convert Data among R/qtl2, R/qtl, and DOQTL
-Description: Functions to convert data structures among the R/qtl2,
-R/qtl, and DOQTL packages.
+Description: Functions to convert data structures among the R/qtl2, R/qtl, and DOQTL packages.
 Author: Karl W Broman <kbroman@biostat.wisc.edu>
 Maintainer: Karl W Broman <kbroman@biostat.wisc.edu>
 Depends:
