@@ -3,7 +3,7 @@ language: r
 r_packages:
  - devtools
 
-r_gitub_packages:
+r_github_packages:
  - rqtl/qtl2geno
  - rqtl/qtl2scan
 
