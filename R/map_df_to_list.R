@@ -21,6 +21,13 @@ map_df_to_list <-
         marker_column <- "qtl2tmp_marker"
         map[,marker_column] <- rownames(marker_column)
     }
+    if(!(marker_column %in% colnames(map)))
+        stop('Column "', marker_column, '" not found.')
+    if(!(chr_column %in% colnames(map)))
+        stop('Column "', chr_column, '" not found.')
+    if(!(pos_column %in% colnames(map)))
+        stop('Column "', pos_column, '" not found.')
+
     marker <- map[,marker_column]
 
     chr <- map[,chr_column]

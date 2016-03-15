@@ -23,6 +23,13 @@ probs_doqtl_to_qtl2 <-
         marker_column <- "qtl2tmp_marker"
         map[,marker_column] <- rownames(marker_column)
     }
+    if(!(marker_column %in% colnames(map)))
+        stop('Column "', marker_column, '" not found.')
+    if(!(chr_column %in% colnames(map)))
+        stop('Column "', chr_column, '" not found.')
+    if(!(pos_column %in% colnames(map)))
+        stop('Column "', pos_column, '" not found.')
+
     marker <- map[,marker_column]
 
     # subset map to the portion in probs
@@ -52,8 +59,8 @@ probs_doqtl_to_qtl2 <-
     # convert map to list
     map <- map_df_to_list(map, chr_column, pos_column, marker_column)
 
-    is_x_chr <- (chr=="X")
-    names(is_x_chr) <- chr
+    is_x_chr <- (uchr=="X")
+    names(is_x_chr) <- uchr
 
     alleles <- LETTERS[1:8]
     if(ncol(probs[[1]])==8)
