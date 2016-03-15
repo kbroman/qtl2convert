@@ -1,5 +1,7 @@
 ### R/qtl2convert
 
+[![Build Status](https://travis-ci.org/rqtl/qtl2convert.svg?branch=master)](https://travis-ci.org/rqtl/qtl2convert)
+
 [Karl Broman](http://kbroman.org)
 
 [R/qtl2convert](https://github.com/rqtl/qtl2convert) is an R package
