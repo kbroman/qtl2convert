@@ -1,4 +1,4 @@
-context("Convert map table to list")
+context("Convert map data frame to list")
 
 test_that("map_df_to_list works", {
 

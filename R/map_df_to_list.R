@@ -11,6 +11,8 @@
 #' @param marker_column Name of the column in \code{map} that contains
 #' the marker names. If NULL, use the row names.
 #'
+#' @seealso \code{\link{map_list_to_df}}
+#'
 #' @return A list of vectors of marker positions, one component per chromosome
 #'
 #' @export
