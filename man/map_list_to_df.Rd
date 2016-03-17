@@ -10,11 +10,11 @@ map_list_to_df(map_list, chr_column = "chr", pos_column = "pos",
 \arguments{
 \item{map_list}{List of vectors containing marker positions}
 
-\item{chr_name}{Name of the chromosome column in the output}
+\item{chr_column}{Name of the chromosome column in the output}
 
-\item{pos_name}{Name of the position column in the output}
+\item{pos_column}{Name of the position column in the output}
 
-\item{marker_name}{Name of the marker column in the output.
+\item{marker_column}{Name of the marker column in the output.
 If NULL, just put them as row names.}
 }
 \value{

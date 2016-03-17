@@ -4,11 +4,11 @@
 #'
 #' @param map_list List of vectors containing marker positions
 #'
-#' @param chr_name Name of the chromosome column in the output
+#' @param chr_column Name of the chromosome column in the output
 #'
-#' @param pos_name Name of the position column in the output
+#' @param pos_column Name of the position column in the output
 #'
-#' @param marker_name Name of the marker column in the output.
+#' @param marker_column Name of the marker column in the output.
 #' If NULL, just put them as row names.
 #'
 #' @seealso \code{\link{map_df_to_list}}
