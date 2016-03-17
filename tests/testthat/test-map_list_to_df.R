@@ -2,7 +2,6 @@ context("Convert map list to data frame")
 
 test_that("map_list_to_df works", {
 
-
     map_list <- structure(list(`1` = structure(c(0.424118388815167, 0.041241020125091,
                                0.466051450603133, 0.0654810203913158, 0.0241660935186957),
                                .Names = c("JAX00240989", "JAX00240649", "UNCJPD009180", "JAX00240804", "JAX00240610")),
@@ -41,5 +40,7 @@ test_that("map_list_to_df works", {
                      "JAX00176676", "UNCHS048205"))
 
     expect_equal(map_list_to_df(map_list, pos_column="cM"), expected)
+
+    expect_equal(map_df_to_list( map_list_to_df(map_list, pos_column="cM"), pos_column="cM"), map_list)
 
 })
