@@ -12,7 +12,7 @@ using namespace Rcpp;
 // if no genotype most common: return NA
 // otherwise return the most common genotype
 //
-std::string consensus_geno(const std::vector<std::string>& g)
+std::string find_consensus_geno_1mar(const std::vector<std::string>& g)
 {
     unsigned int n = g.size();
 
@@ -68,7 +68,7 @@ StringVector find_consensus_geno(StringMatrix g)
         for(unsigned int ind=0; ind<n_ind; ind++)
             input[ind] = Rcpp::as<std::string>(g(mar,ind));
 
-        result[mar] = consensus_geno(input);
+        result[mar] = find_consensus_geno_1mar(input);
     }
 
     return result;

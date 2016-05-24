@@ -11,7 +11,7 @@ using namespace Rcpp;
 //
 // if <2 or >2 unique values, return ("NA",NA")
 //
-std::vector<std::string> unique_geno(const std::vector<std::string>& g)
+std::vector<std::string> find_unique_geno_1mar(const std::vector<std::string>& g)
 {
     unsigned int n = g.size();
 
@@ -59,7 +59,7 @@ StringMatrix find_unique_geno(StringMatrix g)
         for(unsigned int ind=0; ind<n_ind; ind++)
             input[ind] = Rcpp::as<std::string>(g(mar,ind));
 
-        std::vector<std::string> temp_result = unique_geno(input);
+        std::vector<std::string> temp_result = find_unique_geno_1mar(input);
 
         result(mar,0) = temp_result[0];
         result(mar,1) = temp_result[1];

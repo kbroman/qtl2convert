@@ -12,7 +12,7 @@
 // if no genotype most common: return NA
 // otherwise return the most common genotype
 //
-std::string consensus_geno(const std::vector<std::string>& g);
+std::string find_consensus_geno_1mar(const std::vector<std::string>& g);
 
 
 // For each row (corresonding to a marker) in a genotype matrix,

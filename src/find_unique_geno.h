@@ -11,7 +11,7 @@
 //
 // if <2 or >2 unique values, return ("NA",NA")
 //
-std::vector<std::string> unique_geno(const std::vector<std::string>& g);
+std::vector<std::string> find_unique_geno_1mar(const std::vector<std::string>& g);
 
 
 // For each row (corresonding to a marker) in a genotype matrix,
