@@ -18,3 +18,25 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// consensus_geno
+std::string consensus_geno(const std::vector<std::string>& g);
+RcppExport SEXP qtl2convert_consensus_geno(SEXP gSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< const std::vector<std::string>& >::type g(gSEXP);
+    __result = Rcpp::wrap(consensus_geno(g));
+    return __result;
+END_RCPP
+}
+// find_consensus_geno
+StringVector find_consensus_geno(StringMatrix g);
+RcppExport SEXP qtl2convert_find_consensus_geno(SEXP gSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< StringMatrix >::type g(gSEXP);
+    __result = Rcpp::wrap(find_consensus_geno(g));
+    return __result;
+END_RCPP
+}
