@@ -12,6 +12,7 @@
 #' and has the two unique genotypes, or \code{NA}s (if >2 or <2 unique
 #' genotypes).
 #'
+#' @seealso \code{\link{count_unique_geno}}, \code{\link{encode_geno}}
 #' @export
 #' @examples
 #' g <- rbind(c("NA", "A",  "A",  "A", "T"),

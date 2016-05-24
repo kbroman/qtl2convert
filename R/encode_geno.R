@@ -9,6 +9,7 @@
 #'
 #' @return Matrix of same dimensions as \code{geno}, but with values in \code{output_codes}.
 #'
+#' @seealso \code{\link{find_consensus_geno}}, \code{\link{find_unique_geno}}
 #' @export
 #' @examples
 #' geno <- rbind(c("C", "G", "C",  "GG", "CG"),

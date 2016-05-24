@@ -27,4 +27,7 @@ codes <- rbind(c("C", "G"), c("A", "T"), c("T", "G"))
 encode_geno(geno, codes)
 
 }
+\seealso{
+\code{\link{find_consensus_geno}}, \code{\link{find_unique_geno}}
+}
 

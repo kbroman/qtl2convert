@@ -9,6 +9,7 @@
 #'
 #' @return Vector of counts of unique genotypes.
 #'
+#' @seealso \code{\link{find_unique_geno}}
 #' @export
 #' @examples
 #' g <- rbind(c("NA", "A",  "A",  "A", "T"),

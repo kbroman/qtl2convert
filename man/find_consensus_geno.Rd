@@ -26,4 +26,7 @@ g <- rbind(c("NA", "N", "A", "A", "T", "G", NA, "H"),
            c("C", "C", "G", "G", "G", "C", "G", "G"))
 find_consensus_geno(g)
 }
+\seealso{
+\code{\link{find_consensus_geno}}, \code{\link{find_unique_geno}}
+}
 
