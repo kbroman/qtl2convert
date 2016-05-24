@@ -5,6 +5,17 @@
 
 using namespace Rcpp;
 
+// count_unique_geno
+IntegerVector count_unique_geno(StringMatrix g);
+RcppExport SEXP qtl2convert_count_unique_geno(SEXP gSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< StringMatrix >::type g(gSEXP);
+    __result = Rcpp::wrap(count_unique_geno(g));
+    return __result;
+END_RCPP
+}
 // encode_geno
 StringMatrix encode_geno(const StringMatrix& g, const StringMatrix& old_values, const StringVector& new_values);
 RcppExport SEXP qtl2convert_encode_geno(SEXP gSEXP, SEXP old_valuesSEXP, SEXP new_valuesSEXP) {
