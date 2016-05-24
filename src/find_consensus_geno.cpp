@@ -12,7 +12,6 @@ using namespace Rcpp;
 // if no genotype most common: return NA
 // otherwise return the most common genotype
 //
-// [[Rcpp::export(".consensus_geno")]]
 std::string consensus_geno(const std::vector<std::string>& g)
 {
     unsigned int n = g.size();

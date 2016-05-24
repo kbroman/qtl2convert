@@ -6,12 +6,9 @@
 #' marker.
 #'
 #' @param genotypes Matrix of genotypes (markers x individuals)
+#' @param na.strings Genotypes to be considered as missing values.
 #'
 #' @return Vector of consensus genotypes, one value per row of \code{genotypes}
-#'
-#' @details We take \code{"NA"}, \code{"N"}, and \code{"H"} as
-#' missing. Internally (in the C++ code), we use \code{"NA"} as the
-#' missing value.
 #'
 #' @export
 #' @examples
@@ -21,9 +18,9 @@
 #'            c("C", "C", "G", "G", "G", "C", "G", "G"))
 #' find_consensus_geno(g)
 find_consensus_geno <-
-function(genotypes)
+function(genotypes, na.strings=c("N", "H", "NA"))
 {
-    genotypes[is.na(genotypes) | genotypes=="N" | genotypes=="H"] <- "NA"
+    genotypes[is.na(genotypes) | (genotypes %in% na.strings)]  <- "NA"
 
     result <- .find_consensus_geno(genotypes)
     result[result=="NA"] <- NA

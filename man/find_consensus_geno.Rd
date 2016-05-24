@@ -4,10 +4,12 @@
 \alias{find_consensus_geno}
 \title{Find the consensus genotype for each row of a genotype matrix}
 \usage{
-find_consensus_geno(genotypes)
+find_consensus_geno(genotypes, na.strings = c("N", "H", "NA"))
 }
 \arguments{
 \item{genotypes}{Matrix of genotypes (markers x individuals)}
+
+\item{na.strings}{Genotypes to be considered as missing values.}
 }
 \value{
 Vector of consensus genotypes, one value per row of \code{genotypes}
@@ -16,11 +18,6 @@ Vector of consensus genotypes, one value per row of \code{genotypes}
 For genotype data (markers x individuals) on a set of individuals
 from a single inbred line, find the consensus genotype at each
 marker.
-}
-\details{
-We take \code{"NA"}, \code{"N"}, and \code{"H"} as
-missing. Internally (in the C++ code), we use \code{"NA"} as the
-missing value.
 }
 \examples{
 g <- rbind(c("NA", "N", "A", "A", "T", "G", NA, "H"),
