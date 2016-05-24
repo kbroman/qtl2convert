@@ -29,3 +29,14 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// find_unique_geno
+StringMatrix find_unique_geno(StringMatrix g);
+RcppExport SEXP qtl2convert_find_unique_geno(SEXP gSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< StringMatrix >::type g(gSEXP);
+    __result = Rcpp::wrap(find_unique_geno(g));
+    return __result;
+END_RCPP
+}

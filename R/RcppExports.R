@@ -9,3 +9,7 @@
     .Call('qtl2convert_find_consensus_geno', PACKAGE = 'qtl2convert', g)
 }
 
+.find_unique_geno <- function(g) {
+    .Call('qtl2convert_find_unique_geno', PACKAGE = 'qtl2convert', g)
+}
+
