@@ -52,7 +52,7 @@ StringMatrix find_unique_geno(StringMatrix g)
     StringMatrix result(n_mar,2);
 
 
-    // loop over markers and apply consensus_geno (above)
+    // loop over markers and apply the function above
     // oog...rough conversions StringVector <-> std::vector<std::string>
     for(unsigned int mar=0; mar<n_mar; mar++) {
         std::vector<std::string> input(n_ind);
