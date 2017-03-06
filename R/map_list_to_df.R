@@ -15,6 +15,11 @@
 #'
 #' @return A data frame with the marker positions.
 #'
+#' @examples
+#' library(qtl2geno)
+#' iron <- read_cross2(system.file("extdata", "iron.zip", package="qtl2geno"))
+#' iron_map <- map_list_to_df(iron$gmap)
+#'
 #' @export
 map_list_to_df <-
     function(map_list, chr_column="chr", pos_column="pos", marker_column="marker")

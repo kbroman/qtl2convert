@@ -19,6 +19,12 @@
 #'
 #' @return A list of vectors of marker positions, one component per chromosome
 #'
+#' @examples
+#' map <- data.frame(chr=c(1,1,1,  2,2,2,   "X","X"),
+#'                   pos=c(0,5,10, 0,8,16,  5,20),
+#'                   marker=c("D1M1","D1M2","D1M3",    "D2M1","D2M2","D2M3",   "DXM1","DXM2"))
+#' map_list <- map_df_to_list(map, pos_column="pos")
+#'
 #' @export
 map_df_to_list <-
     function(map, chr_column="chr", pos_column="cM", marker_column="marker",
