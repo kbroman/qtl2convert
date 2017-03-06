@@ -17,6 +17,7 @@ test_that("map_list_to_df works", {
                                .Names = c("JAX00708681",
                                "JAX00708630r", "UNCHS048201", "JAX00176676", "UNCHS048205"
                                ))), .Names = c("1", "2", "10", "X"))
+    attr(map_list, "is_x_chr") <- c("1"=FALSE, "2"=FALSE, "10"=FALSE, "X"=TRUE)
 
     expected <-  structure(list(chr = c("1", "1", "1", "1", "1",
                                 "2", "2", "2", "2", "2", "10", "10", "10",

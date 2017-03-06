@@ -5,7 +5,7 @@
 \title{Marker map data frame to list}
 \usage{
 map_df_to_list(map, chr_column = "chr", pos_column = "cM",
-  marker_column = "marker")
+  marker_column = "marker", Xchr = c("x", "X"))
 }
 \arguments{
 \item{map}{Data frame with marker map}
@@ -16,6 +16,10 @@ map_df_to_list(map, chr_column = "chr", pos_column = "cM",
 
 \item{marker_column}{Name of the column in \code{map} that contains
 the marker names. If NULL, use the row names.}
+
+\item{Xchr}{Vector of character strings indicating the name or
+names of the X chromosome. If NULL, assume there's no X
+chromosome.}
 }
 \value{
 A list of vectors of marker positions, one component per chromosome

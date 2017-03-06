@@ -11,13 +11,18 @@
 #' @param marker_column Name of the column in \code{map} that contains
 #' the marker names. If NULL, use the row names.
 #'
+#' @param Xchr Vector of character strings indicating the name or
+#' names of the X chromosome. If NULL, assume there's no X
+#' chromosome.
+#'
 #' @seealso \code{\link{map_list_to_df}}
 #'
 #' @return A list of vectors of marker positions, one component per chromosome
 #'
 #' @export
 map_df_to_list <-
-    function(map, chr_column="chr", pos_column="cM", marker_column="marker")
+    function(map, chr_column="chr", pos_column="cM", marker_column="marker",
+             Xchr=c("x", "X"))
 {
     if(is.null(marker_column)) {
         marker_column <- "qtl2tmp_marker"
@@ -40,6 +45,17 @@ map_df_to_list <-
     marker <- split(marker, factor(chr, levels=uchr))
     for(i in seq(along=result))
         names(result[[i]]) <- marker[[i]]
+
+    is_x_chr <- rep(FALSE, length(result))
+    names(is_x_chr) <- names(result)
+    if(!is.null(Xchr)) {
+        Xchr_used <- Xchr %in% names(is_x_chr)
+        if(any(Xchr_used)) {
+            Xchr <- Xchr[Xchr_used]
+            is_x_chr[Xchr] <- TRUE
+        }
+    }
+    attr(result, "is_x_chr") <- is_x_chr
 
     result
 }

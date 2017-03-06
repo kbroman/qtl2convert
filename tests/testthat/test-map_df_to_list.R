@@ -38,6 +38,7 @@ test_that("map_df_to_list works", {
                                .Names = c("JAX00708681",
                                "JAX00708630r", "UNCHS048201", "JAX00176676", "UNCHS048205"
                                ))), .Names = c("1", "2", "10", "X"))
+    attr(expected, "is_x_chr") <- c("1"=FALSE, "2"=FALSE, "10"=FALSE, "X"=TRUE)
 
     expect_equal(map_df_to_list(df), expected)
 
