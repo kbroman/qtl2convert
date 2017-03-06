@@ -18,7 +18,9 @@ test_that("scan_qtl2_to_qtl works", {
 
     library(qtl2geno)
     hyper2 <- convert2cross2(hyper)
-    pr <- calc_genoprob(hyper2, pseudomarker_map = pmap, err=0.01)
+    map <- insert_pseudomarkers(pull.map(hyper), pseudomarker_map=pmap)
+
+    pr <- calc_genoprob(hyper2, map, err=0.01)
     library(qtl2scan)
     out_scan1 <- scan1(pr, hyper$pheno[,1,drop=FALSE])
 
@@ -27,7 +29,7 @@ test_that("scan_qtl2_to_qtl works", {
     for(atname in c("method", "type", "model"))
         attr(out_scanone, atname) <- NULL
 
-    out_conv <- scan_qtl2_to_qtl(out_scan1)
+    out_conv <- scan_qtl2_to_qtl(out_scan1, map)
     expect_equal(out_conv, out_scanone)
 
 })

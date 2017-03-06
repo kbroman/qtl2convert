@@ -15,8 +15,8 @@ Suggests:
     devtools,
     roxygen2,
     qtl,
-    qtl2geno,
-    qtl2scan
+    qtl2geno (>= 0.5-4),
+    qtl2scan (>= 0.5-2)
 License: GPL-3
 URL: https://github.com/rqtl/qtl2convert
 LinkingTo: Rcpp
