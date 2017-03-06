@@ -29,4 +29,3 @@ find_consensus_geno(g)
 \seealso{
 \code{\link{find_consensus_geno}}, \code{\link{find_unique_geno}}
 }
-

@@ -25,4 +25,3 @@ An object of the for produced by the R/qtl2geno function \code{calc_genoprob}.
 \description{
 Convert DOQTL genotype probabilities to R/qtl2 format
 }
-

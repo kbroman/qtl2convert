@@ -26,4 +26,3 @@ Convert a marker map organized as data frame to a list
 \seealso{
 \code{\link{map_list_to_df}}
 }
-

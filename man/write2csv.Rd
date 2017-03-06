@@ -38,4 +38,3 @@ colnames(x)[1:nc + 1] <- paste0("col", 1:nc)
 \dontrun{
 write2csv(x, "/tmp/tmpfile.csv", "A file created by write2csv")}
 }
-
