@@ -20,12 +20,11 @@ test_that("probs_doqtl_to_qtl2 works", {
     expect_error( probs_doqtl_to_qtl2(p, map) ) # no pos column
     result <- probs_doqtl_to_qtl2(p, map, pos_column="Mbp")
 
-    expected <- list(probs=list("1"=p[,,1:5], "2"=p[,,6:10]),
-                     map=map_df_to_list(map, pos_column="Mbp"),
-                     is_x_chr=c("1"=FALSE,"2"=FALSE),
-                     crosstype="do",
-                     alleles=LETTERS[1:8],
-                     alleleprobs=TRUE)
+    expected <- list("1"=p[,,1:5], "2"=p[,,6:10])
+    attr(expected, "is_x_chr") <- c("1"=FALSE,"2"=FALSE)
+    attr(expected, "crosstype") <- "do"
+    attr(expected, "alleles") <- LETTERS[1:8]
+    attr(expected, "alleleprobs") <- TRUE
     class(expected) <- c("calc_genoprob", "list")
 
     expect_equal( result, expected )

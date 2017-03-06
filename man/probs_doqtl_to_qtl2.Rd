@@ -20,7 +20,7 @@ probs_doqtl_to_qtl2(probs, map, chr_column = "chr", pos_column = "cM",
 the marker names. If NULL, use the row names.}
 }
 \value{
-An object of the for produced by the R/qtl2geno function \code{calc_genoprob}.
+An object of the form produced by \code{\link[qtl2geno]{calc_genoprob}}.
 }
 \description{
 Convert DOQTL genotype probabilities to R/qtl2 format
