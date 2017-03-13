@@ -5,7 +5,7 @@
 \title{Marker map data frame to list}
 \usage{
 map_df_to_list(map, chr_column = "chr", pos_column = "cM",
-  marker_column = "marker")
+  marker_column = "marker", Xchr = c("x", "X"))
 }
 \arguments{
 \item{map}{Data frame with marker map}
@@ -16,6 +16,10 @@ map_df_to_list(map, chr_column = "chr", pos_column = "cM",
 
 \item{marker_column}{Name of the column in \code{map} that contains
 the marker names. If NULL, use the row names.}
+
+\item{Xchr}{Vector of character strings indicating the name or
+names of the X chromosome. If NULL, assume there's no X
+chromosome.}
 }
 \value{
 A list of vectors of marker positions, one component per chromosome
@@ -23,7 +27,13 @@ A list of vectors of marker positions, one component per chromosome
 \description{
 Convert a marker map organized as data frame to a list
 }
+\examples{
+map <- data.frame(chr=c(1,1,1,  2,2,2,   "X","X"),
+                  pos=c(0,5,10, 0,8,16,  5,20),
+                  marker=c("D1M1","D1M2","D1M3",    "D2M1","D2M2","D2M3",   "DXM1","DXM2"))
+map_list <- map_df_to_list(map, pos_column="pos")
+
+}
 \seealso{
 \code{\link{map_list_to_df}}
 }
-

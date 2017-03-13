@@ -28,4 +28,3 @@ count_unique_geno(g)
 \seealso{
 \code{\link{find_unique_geno}}
 }
-

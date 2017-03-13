@@ -13,7 +13,7 @@
 #' @param marker_column Name of the column in \code{map} that contains
 #' the marker names. If NULL, use the row names.
 #'
-#' @return An object of the for produced by the R/qtl2geno function \code{calc_genoprob}.
+#' @return An object of the form produced by \code{\link[qtl2geno]{calc_genoprob}}.
 #'
 #' @export
 probs_doqtl_to_qtl2 <-
@@ -56,9 +56,6 @@ probs_doqtl_to_qtl2 <-
     probs <- newprobs
     rm(newprobs)
 
-    # convert map to list
-    map <- map_df_to_list(map, chr_column, pos_column, marker_column)
-
     is_x_chr <- (uchr=="X")
     names(is_x_chr) <- uchr
 
@@ -70,14 +67,11 @@ probs_doqtl_to_qtl2 <-
         warning("Order of genotypes may be incorrect.") ## FIX_ME
     }
 
-    result <- list(probs=probs,
-                   map=map,
-                   is_x_chr=is_x_chr,
-                   crosstype="do",
-                   alleles=LETTERS[1:8],
-                   alleleprobs=alleleprobs)
-    # missing sex and cross_info
+    attr(probs, "is_x_chr") <- is_x_chr
+    attr(probs, "crosstype") <- "do"
+    attr(probs, "alleles") <- LETTERS[1:8]
+    attr(probs, "alleleprobs") <- alleleprobs
 
-    class(result) <- c("calc_genoprob", "list")
-    result
+    class(probs) <- c("calc_genoprob", "list")
+    probs
 }

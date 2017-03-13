@@ -31,4 +31,3 @@ find_unique_geno(g)
 \seealso{
 \code{\link{count_unique_geno}}, \code{\link{encode_geno}}
 }
-
