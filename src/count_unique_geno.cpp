@@ -10,13 +10,13 @@ using namespace Rcpp;
 //
 int count_unique_geno_1mar(const std::vector<std::string>& g)
 {
-    unsigned int n = g.size();
+    int n = g.size();
 
     // create hash
-    std::map<std::string,unsigned int>unique_g;
+    std::map<std::string,int>unique_g;
 
     // count unique values that are not "NA"
-    for(unsigned int i=0; i<n; i++) {
+    for(int i=0; i<n; i++) {
         if(g[i] != "NA")
             unique_g[g[i]] = 1;
     }
@@ -31,16 +31,16 @@ int count_unique_geno_1mar(const std::vector<std::string>& g)
 // [[Rcpp::export(".count_unique_geno")]]
 IntegerVector count_unique_geno(StringMatrix g)
 {
-    unsigned int n_mar = g.rows();
-    unsigned int n_ind = g.cols();
+    int n_mar = g.rows();
+    int n_ind = g.cols();
     IntegerVector result(n_mar);
 
 
     // loop over markers and apply function above
     // oog...rough conversions StringVector <-> std::vector<std::string>
-    for(unsigned int mar=0; mar<n_mar; mar++) {
+    for(int mar=0; mar<n_mar; mar++) {
         std::vector<std::string> input(n_ind);
-        for(unsigned int ind=0; ind<n_ind; ind++)
+        for(int ind=0; ind<n_ind; ind++)
             input[ind] = Rcpp::as<std::string>(g(mar,ind));
 
         result[mar] = count_unique_geno_1mar(input);

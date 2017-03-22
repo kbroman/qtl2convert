@@ -14,14 +14,14 @@ using namespace Rcpp;
 //
 std::string find_consensus_geno_1mar(const std::vector<std::string>& g)
 {
-    unsigned int n = g.size();
+    int n = g.size();
 
     // create hash
-    std::map<std::string,unsigned int>counts;
+    std::map<std::string,int>counts;
 
     // count unique values that are not "NA"
-    unsigned int n_notmissing = 0;
-    for(unsigned int i=0; i<n; i++) {
+    int n_notmissing = 0;
+    for(int i=0; i<n; i++) {
         if(g[i] != "NA") {
             ++counts[g[i]];
             n_notmissing++;
@@ -30,10 +30,10 @@ std::string find_consensus_geno_1mar(const std::vector<std::string>& g)
     if(n_notmissing==0) return("NA");
 
     // find maximum; keep track of whether it's a tie
-    unsigned int max_count = 0;
+    int max_count = 0;
     std::string return_val = "NA";
     bool tie = true;
-    for(std::map<std::string, unsigned int>::iterator p=counts.begin(); p != counts.end(); ++p) {
+    for(std::map<std::string, int>::iterator p=counts.begin(); p != counts.end(); ++p) {
         if(p->second == max_count) {
             tie = true;
         }
@@ -56,16 +56,16 @@ std::string find_consensus_geno_1mar(const std::vector<std::string>& g)
 // [[Rcpp::export(".find_consensus_geno")]]
 StringVector find_consensus_geno(StringMatrix g)
 {
-    unsigned int n_mar = g.rows();
-    unsigned int n_ind = g.cols();
+    int n_mar = g.rows();
+    int n_ind = g.cols();
     StringVector result(n_mar);
 
 
     // loop over markers and apply consensus_geno (above)
     // oog...rough conversions StringVector <-> std::vector<std::string>
-    for(unsigned int mar=0; mar<n_mar; mar++) {
+    for(int mar=0; mar<n_mar; mar++) {
         std::vector<std::string> input(n_ind);
-        for(unsigned int ind=0; ind<n_ind; ind++)
+        for(int ind=0; ind<n_ind; ind++)
             input[ind] = Rcpp::as<std::string>(g(mar,ind));
 
         result[mar] = find_consensus_geno_1mar(input);
