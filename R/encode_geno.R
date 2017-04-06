@@ -24,6 +24,9 @@ function(geno, allele_codes, output_codes=c("-", "A", "H", "B"))
     stopifnot(nrow(geno) == nrow(allele_codes))
     stopifnot(ncol(allele_codes) == 2)
 
+    if(!is.matrix(geno)) geno <- as.matrix(geno)
+    if(!is.matrix(allele_codes)) allele_codes <- as.matrix(allele_codes)
+
     geno_codes <- cbind(allele_codes, # A and B
                         paste0(allele_codes[,1], allele_codes[,1]), # AA
                         paste0(allele_codes[,2], allele_codes[,2]), # BB
