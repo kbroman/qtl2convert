@@ -1,4 +1,11 @@
-## qtl2convert 0.5-1
+## qtl2convert 0.5-2 (2017-04-19)
+
+### Minor changes
+
+- `encode_geno`: convert inputs to matrices if necessary.
+
+
+## qtl2convert 0.5-1 (2017-03-13)
 
 ### New features
 
