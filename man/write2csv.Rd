@@ -4,7 +4,8 @@
 \alias{write2csv}
 \title{Write a data frame to a CSV file}
 \usage{
-write2csv(df, filename, comment = "", sep = ",", comment.char = "#")
+write2csv(df, filename, comment = "", sep = ",", comment.char = "#",
+  overwrite = FALSE)
 }
 \arguments{
 \item{df}{A data frame (or matrix)}
@@ -16,6 +17,10 @@ write2csv(df, filename, comment = "", sep = ",", comment.char = "#")
 \item{sep}{Field separator}
 
 \item{comment.char}{Character to use to initiate the comment lines}
+
+\item{overwrite}{If TRUE, overwrite file if it exists. If FALSE
+(the default) and the file exists, stop with an error.
+#'}
 }
 \description{
 Write a data frame to a CSV file in a special form, with info about the number of rows and columns.

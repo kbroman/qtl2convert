@@ -1,3 +1,11 @@
+## qtl2convert 0.5-3 (2017-04-29)
+
+## Minor changes
+
+- Add `overwrite` argument to `write2csv`. If `overwrite=TRUE`, write
+  over file if it exists; if `overwrite=FALSE`, stop with an error.
+
+
 ## qtl2convert 0.5-2 (2017-04-19)
 
 ### Minor changes

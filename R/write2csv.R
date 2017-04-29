@@ -8,7 +8,9 @@
 #' @param comment Comment to place on the first line
 #' @param sep Field separator
 #' @param comment.char Character to use to initiate the comment lines
-#'
+#' @param overwrite If TRUE, overwrite file if it exists. If FALSE
+#' (the default) and the file exists, stop with an error.
+#'#'
 #' @details
 #' If the file already exists, the function will refuse to write over it.
 #'
@@ -30,10 +32,10 @@
 #' \dontrun{
 #' write2csv(x, "/tmp/tmpfile.csv", "A file created by write2csv")}
 write2csv <-
-    function(df, filename, comment="", sep=",", comment.char="#")
+    function(df, filename, comment="", sep=",", comment.char="#", overwrite=FALSE)
 {
-    if(file.exists(filename))
-        stop(filename, " already exits. Remove it first.")
+    if(!overwrite && file.exists(filename))
+        stop(filename, " already exits. Remove it first (or use overwrite=TRUE).")
 
     if(comment != '')
         cat(comment.char, " ", comment, "\n", file=filename, sep="")
