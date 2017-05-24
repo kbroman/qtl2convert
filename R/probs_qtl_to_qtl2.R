@@ -20,7 +20,7 @@
 #' map <- result$map
 #'
 #' @importFrom stats setNames
-#' @importFrom qtl getsex nind
+#' @importFrom qtl getsex nind getgenonames
 #' @export
 probs_qtl_to_qtl2 <-
     function(cross)
@@ -80,7 +80,7 @@ revise_x_probs <-
     function(crosstype, sexpgm, prob, alleles)
 {
     if(is.null(alleles)) alleles <- c("A", "B")
-    gnames <- qtl2geno::geno_names(crosstype, alleles, TRUE)
+    gnames <- X_geno_names(crosstype, alleles)
 
     result <- array(0, dim=c(dim(prob)[1:2], length(gnames)))
     dimnames(result) <- list(rownames(prob), colnames(prob), gnames)
@@ -111,4 +111,28 @@ revise_x_probs <-
     }
 
     result
+}
+
+X_geno_names <-
+    function(crosstype, alleles)
+{
+    # get X chr genotype names, forcing all columns (which is what R/qtl2 does)
+    if(crosstype=="bc") {
+        gn <- qtl::getgenonames(crosstype, "X", "full", list(sex=c(0,1), pgm=NULL),
+                                list(alleles=alleles))
+    } else {
+
+        gn <- qtl::getgenonames(crosstype, "X", "full", list(sex=c(0,0,1), pgm=c(0,1,0)),
+                                list(alleles=alleles))
+
+        fr <- substr(gn, 3, 4)
+        # things like ABf -> AB
+        if(any(fr == "f"))
+            gn[fr=="f"] <- substr(gn[fr=="f"], 1, 2)
+        # things like ABr -> BA
+        if(any(fr == "r"))
+            gn[fr=="r"] <- vapply(strsplit(substr(gn[fr=="r"], 1, 2), ""),
+                                  function(a) paste(rev(a), collapse=""), "")
+    }
+    gn
 }

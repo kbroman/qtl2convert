@@ -9,12 +9,12 @@ Depends:
     R (>= 3.1.0)
 Imports:
     Rcpp (>= 0.12.1),
+    qtl (>= 1.40-8),
     utils
 Suggests:
     testthat,
     devtools,
     roxygen2,
-    qtl,
     qtl2geno (>= 0.5-4),
     qtl2scan (>= 0.5-3)
 License: GPL-3
