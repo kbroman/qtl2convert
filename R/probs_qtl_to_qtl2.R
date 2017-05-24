@@ -32,15 +32,33 @@ probs_qtl_to_qtl2 <-
     crosstype <- class(cross)[1]
     chr <- names(cross$geno)
 
-    # chromosome types
+    # chromosome types -> is_x_chr
     chrtype <- sapply(cross$geno, class)
     chrtype[chrtype != "A" & chrtype != "X"] <- "A"
-
     is_x_chr <- stats::setNames(chrtype=="X", chr)
 
-    pr <- lapply(cross$geno, function(a) aperm(a$prob, c(1,3,2)))
-    map <- lapply(pr, attr, "map")
+    # grab probabilities
+    pr <- lapply(cross$geno, function(a) a$prob)
+
+    # fix X chr if necessary
+    if(any(is_x_chr) && (crosstype=="bc" || crosstype=="f2" || crosstype=="bcsft")) {
+        sexpgm <- qtl::getsex(cross)
+        for(j in seq_along(cross$geno)[is_x_chr])
+            pr[[j]] <- qtl::reviseXdata(crosstype, "full", sexpgm, prob=pr[[j]],
+                                        cross.attr=attributes(cross), force=TRUE)
+    }
+
+    # reorder dimensions of the probabilities (ind,pos,genotype) -> (ind,genotype,pos)
+    pr <- lapply(pr, function(a) aperm(a, c(1,3,2)))
+
+    # grab map
+    map <- lapply(cross$geno, function(a) attr(a$prob, "map"))
+
+    # add chromosome names + individual IDs
     names(pr) <- names(map) <- chr
+    ids <- getid(cross)
+    if(is.null(ids)) ids <- 1:qtl::nind(cross)
+    for(i in seq_along(pr)) rownames(pr[[i]]) <- ids
 
     attr(pr, "crosstype") <- crosstype
     attr(pr, "is_x_chr") <- is_x_chr
