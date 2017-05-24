@@ -29,7 +29,11 @@ probs_qtl_to_qtl2 <-
     if(!("prob" %in% names(cross$geno[[1]])))
         stop("Input doesn't contain genotype probabilities from calc.genoprob")
 
+    # treat bcsft as "f2" but return "bcsft" as the attribute
     crosstype <- class(cross)[1]
+    crosstype2 <- crosstype
+    if(crosstype=="bcsft") crosstype2 <- "f2"
+
     chr <- names(cross$geno)
 
     # chromosome types -> is_x_chr
@@ -41,11 +45,11 @@ probs_qtl_to_qtl2 <-
     pr <- lapply(cross$geno, function(a) a$prob)
 
     # fix X chr if necessary
-    if(any(is_x_chr) && (crosstype=="bc" || crosstype=="f2" || crosstype=="bcsft")) {
+    if(any(is_x_chr) && (crosstype2=="bc" || crosstype2=="f2")) {
         sexpgm <- qtl::getsex(cross)
         for(j in seq_along(cross$geno)[is_x_chr])
-            pr[[j]] <- qtl::reviseXdata(crosstype, "full", sexpgm, prob=pr[[j]],
-                                        cross.attr=attributes(cross), force=TRUE)
+            pr[[j]] <- revise_x_probs(crosstype2, sexpgm, prob=pr[[j]],
+                                      attr(cross, "alleles"))
     }
 
     # reorder dimensions of the probabilities (ind,pos,genotype) -> (ind,genotype,pos)
@@ -64,7 +68,44 @@ probs_qtl_to_qtl2 <-
     attr(pr, "is_x_chr") <- is_x_chr
     attr(pr, "alleles") <- attr(cross, "alleles")
     attr(pr, "alleleprobs") <- FALSE
-    class(pr) <- "calc_genoprob"
+    class(pr) <- c("calc_genoprob", "list")
 
     list(probs=pr, map=map)
+}
+
+
+# convert the x chromosome probabilities for BC or intercross
+revise_x_probs <-
+    function(crosstype, sexpgm, prob, alleles)
+{
+    if(is.null(alleles)) alleles <- c("A", "B")
+    gnames <- qtl2geno::geno_names(crosstype, alleles, TRUE)
+
+    result <- array(0, dim=c(dim(prob)[1:2], length(gnames)))
+    dimnames(result) <- list(rownames(prob), colnames(prob), gnames)
+
+    if(crosstype=="bc") {
+        sex <- sexpgm$sex
+        if(is.null(sex)) stop("sex is missing")
+        if(any(sex==0)) # females
+            result[sex==0,,1:2] <- prob[sex==0,,]
+        if(any(sex==1)) # males
+            result[sex==1,,3:4] <- prob[sex==1,,]
+    }
+    else { # "f2"
+        if(is.null(sexpgm$sex) || is.null(sexpgm$pgm))
+            stop("sex and/or pgm are missing")
+        femforw <- (sexpgm$sex==0 & sexpgm$pgm==0)
+        femback <- (sexpgm$sex==0 & sexpgm$pgm==1)
+        mal <- (sexpgm$sex==1)
+
+        if(any(femforw))
+            result[femforw,,1:2] <- prob[femforw,,]
+        if(any(femback))
+            result[femback,,3:4] <- prob[femback,,2:1]
+        if(any(mal))
+            result[mal,,5:6] <- prob[back,,]
+    }
+
+    result
 }
