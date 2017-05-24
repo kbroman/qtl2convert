@@ -1,3 +1,11 @@
+## qtl2convert 0.5-4 (2017-05-24)
+
+### New features
+
+- Added function `probs_qtl_to_qtl2` for converting genotype
+  probabilities from R/qtl to R/qtl2 format.
+
+
 ## qtl2convert 0.5-3 (2017-04-29)
 
 ## Minor changes
