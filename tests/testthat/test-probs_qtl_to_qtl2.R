@@ -3,6 +3,8 @@ context("probs_qtl_to_qtl2")
 test_that("probs_qtl_to_qtl2 works for backcross", {
 
     library(qtl)
+    library(qtl2geno)
+
     data(hyper)
     hyper <- hyper[c(1,6,"X"),]
     hyper <- calc.genoprob(hyper, step=1, error.prob=0.002)
@@ -23,6 +25,8 @@ test_that("probs_qtl_to_qtl2 works for intercross", {
     set.seed(92493498)
 
     library(qtl)
+    library(qtl2geno)
+
     data(listeria)
     listeria <- listeria[c(1,8,"X"),]
     listeria <- calc.genoprob(listeria, step=1, error.prob=0.002)
