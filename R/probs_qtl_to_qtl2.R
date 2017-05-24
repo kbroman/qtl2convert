@@ -20,6 +20,7 @@
 #' map <- result$map
 #'
 #' @importFrom stats setNames
+#' @importFrom qtl getsex nind
 #' @export
 probs_qtl_to_qtl2 <-
     function(cross)
@@ -93,18 +94,20 @@ revise_x_probs <-
             result[sex==1,,3:4] <- prob[sex==1,,]
     }
     else { # "f2"
-        if(is.null(sexpgm$sex) || is.null(sexpgm$pgm))
-            stop("sex and/or pgm are missing")
-        femforw <- (sexpgm$sex==0 & sexpgm$pgm==0)
-        femback <- (sexpgm$sex==0 & sexpgm$pgm==1)
-        mal <- (sexpgm$sex==1)
+        sex <- sexpgm$sex
+        pgm <- sexpgm$pgm
+        if(is.null(sex)) stop("sex is missing")
+        if(is.null(pgm)) pgm <- rep(0, nrow(prob))
+        femforw <- (sex==0 & pgm==0)
+        femback <- (sex==0 & pgm==1)
+        mal <- (sex==1)
 
         if(any(femforw))
             result[femforw,,1:2] <- prob[femforw,,]
         if(any(femback))
             result[femback,,3:4] <- prob[femback,,2:1]
         if(any(mal))
-            result[mal,,5:6] <- prob[back,,]
+            result[mal,,5:6] <- prob[mal,,]
     }
 
     result
