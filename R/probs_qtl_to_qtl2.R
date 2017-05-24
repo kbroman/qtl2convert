@@ -20,7 +20,7 @@
 #' map <- result$map
 #'
 #' @importFrom stats setNames
-#' @importFrom qtl getsex nind getgenonames
+#' @importFrom qtl getsex nind getgenonames getid
 #' @export
 probs_qtl_to_qtl2 <-
     function(cross)
@@ -61,7 +61,7 @@ probs_qtl_to_qtl2 <-
 
     # add chromosome names + individual IDs
     names(pr) <- names(map) <- chr
-    ids <- getid(cross)
+    ids <- qtl::getid(cross)
     if(is.null(ids)) ids <- 1:qtl::nind(cross)
     for(i in seq_along(pr)) rownames(pr[[i]]) <- ids
 
