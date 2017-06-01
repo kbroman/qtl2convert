@@ -18,7 +18,11 @@ Suggests:
     qtl2geno (>= 0.5-4),
     qtl2scan (>= 0.5-3)
 License: GPL-3
-URL: https://github.com/rqtl/qtl2convert
+URL: http://kbroman.org/qtl2, https://github.com/rqtl/qtl2convert
+BugReports: https://github.com/rqtl/qtl2convert/issues
 LinkingTo: Rcpp
 LazyData: true
 RoxygenNote: 6.0.1
+Remotes:
+    rqtl/qtl2geno,
+    rqtl/qtl2scan
