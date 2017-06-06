@@ -1,3 +1,10 @@
+## qtl2convert 0.5-5 (2017-06-05)
+
+### Minor changes
+
+- Revised installation instructions.
+
+
 ## qtl2convert 0.5-4 (2017-05-24)
 
 ### New features
