@@ -1,3 +1,11 @@
+## qtl2convert 0.5-6 (2017-06-08)
+
+### New features
+
+- Revised probs_doqtl_to_qtl2 so that the genotypes are reordered
+  appropriately. Still not sure about X chromosome, though.
+
+
 ## qtl2convert 0.5-5 (2017-06-05)
 
 ### Minor changes
