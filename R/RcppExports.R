@@ -2,18 +2,18 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 .count_unique_geno <- function(g) {
-    .Call('qtl2convert_count_unique_geno', PACKAGE = 'qtl2convert', g)
+    .Call(`_qtl2convert_count_unique_geno`, g)
 }
 
 .encode_geno <- function(g, old_values, new_values) {
-    .Call('qtl2convert_encode_geno', PACKAGE = 'qtl2convert', g, old_values, new_values)
+    .Call(`_qtl2convert_encode_geno`, g, old_values, new_values)
 }
 
 .find_consensus_geno <- function(g) {
-    .Call('qtl2convert_find_consensus_geno', PACKAGE = 'qtl2convert', g)
+    .Call(`_qtl2convert_find_consensus_geno`, g)
 }
 
 .find_unique_geno <- function(g) {
-    .Call('qtl2convert_find_unique_geno', PACKAGE = 'qtl2convert', g)
+    .Call(`_qtl2convert_find_unique_geno`, g)
 }
 

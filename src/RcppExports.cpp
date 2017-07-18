@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // count_unique_geno
 IntegerVector count_unique_geno(StringMatrix g);
-RcppExport SEXP qtl2convert_count_unique_geno(SEXP gSEXP) {
+RcppExport SEXP _qtl2convert_count_unique_geno(SEXP gSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -18,7 +18,7 @@ END_RCPP
 }
 // encode_geno
 StringMatrix encode_geno(const StringMatrix& g, const StringMatrix& old_values, const StringVector& new_values);
-RcppExport SEXP qtl2convert_encode_geno(SEXP gSEXP, SEXP old_valuesSEXP, SEXP new_valuesSEXP) {
+RcppExport SEXP _qtl2convert_encode_geno(SEXP gSEXP, SEXP old_valuesSEXP, SEXP new_valuesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -31,7 +31,7 @@ END_RCPP
 }
 // find_consensus_geno
 StringVector find_consensus_geno(StringMatrix g);
-RcppExport SEXP qtl2convert_find_consensus_geno(SEXP gSEXP) {
+RcppExport SEXP _qtl2convert_find_consensus_geno(SEXP gSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -42,7 +42,7 @@ END_RCPP
 }
 // find_unique_geno
 StringMatrix find_unique_geno(StringMatrix g);
-RcppExport SEXP qtl2convert_find_unique_geno(SEXP gSEXP) {
+RcppExport SEXP _qtl2convert_find_unique_geno(SEXP gSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -50,4 +50,17 @@ BEGIN_RCPP
     rcpp_result_gen = Rcpp::wrap(find_unique_geno(g));
     return rcpp_result_gen;
 END_RCPP
+}
+
+static const R_CallMethodDef CallEntries[] = {
+    {"_qtl2convert_count_unique_geno", (DL_FUNC) &_qtl2convert_count_unique_geno, 1},
+    {"_qtl2convert_encode_geno", (DL_FUNC) &_qtl2convert_encode_geno, 3},
+    {"_qtl2convert_find_consensus_geno", (DL_FUNC) &_qtl2convert_find_consensus_geno, 1},
+    {"_qtl2convert_find_unique_geno", (DL_FUNC) &_qtl2convert_find_unique_geno, 1},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_qtl2convert(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
 }
