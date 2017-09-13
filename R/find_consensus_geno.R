@@ -10,7 +10,7 @@
 #'
 #' @return Vector of consensus genotypes, one value per row of \code{genotypes}
 #'
-#' @seealso \code{\link{find_consensus_geno}}, \code{\link{find_unique_geno}}
+#' @seealso \code{\link{find_unique_geno}}, \code{\link{encode_geno}}
 #' @export
 #' @examples
 #' g <- rbind(c("NA", "N", "A", "A", "T", "G", NA, "H"),
