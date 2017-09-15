@@ -6,7 +6,7 @@
 
 [R/qtl2convert](https://github.com/rqtl/qtl2convert) is an R package
 for converting data among [R/qtl2](http://kbroman.org/qtl2),
-[R/qtl](http://rqtl.org), and
+[R/qtl](https://rqtl.org), and
 [DOQTL](https://www.bioconductor.org/packages/release/bioc/html/DOQTL.html).
 
 ---
@@ -14,9 +14,9 @@ for converting data among [R/qtl2](http://kbroman.org/qtl2),
 ### Installation
 
 R/qtl2 is not yet available on [CRAN](https://cran.r-project.org), but
-it can be installed from a mini-CRAN at [rqtl.org](http://rqtl.org).
+it can be installed from a mini-CRAN at [rqtl.org](https://rqtl.org).
 
-    install.packages("qtl2", repos="http://rqtl.org/qtl2cran")
+    install.packages("qtl2", repos="https://rqtl.org/qtl2cran")
 
 The [qtl2](https://github.com/rqtl/qtl2) package is
 inspired by the
