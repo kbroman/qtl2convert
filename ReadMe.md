@@ -4,10 +4,21 @@
 
 [Karl Broman](http://kbroman.org)
 
-[R/qtl2convert](https://github.com/rqtl/qtl2convert) is an R package
-for converting data among [R/qtl2](http://kbroman.org/qtl2),
-[R/qtl](https://rqtl.org), and
-[DOQTL](https://www.bioconductor.org/packages/release/bioc/html/DOQTL.html).
+[R/qtl2](http://kbroman.org/qtl2) (aka qtl2) is a reimplementation of
+the QTL analysis software [R/qtl](https://rqtl.org), to better handle
+high-dimensional data and complex cross designs. It is split into
+multiple packages:
+
+- [qtl2geno](https://github.com/rqtl/qtl2geno), for calculating genotype
+  probabilities, imputations, and genetic maps
+- [qtl2scan](https://github.com/rqtl/qtl2scan), for QTL genome scans and
+  related calculations
+- [qtl2plot](https://github.com/rqtl/qtl2plot), for data visualization
+- [qtl2convert](https://github.com/rqtl/qtl2convert),
+  for converting data among the R/qtl2,
+  [DOQTL](https://www.bioconductor.org/packages/release/bioc/html/DOQTL.html),
+  and [R/qtl](https://rqtl.org) formats
+- [qtl2db](https://github.com/rqtl/qtl2db), for connecting to genome databases
 
 ---
 
@@ -15,6 +26,7 @@ for converting data among [R/qtl2](http://kbroman.org/qtl2),
 
 R/qtl2 is not yet available on [CRAN](https://cran.r-project.org), but
 it can be installed from a mini-CRAN at [rqtl.org](https://rqtl.org).
+Make sure you have the latest version of [R (3.4.2)](https://cran.r-project.org).
 
     install.packages("qtl2", repos="https://rqtl.org/qtl2cran")
 
@@ -24,8 +36,9 @@ inspired by the
 it is basically empty, but when you install it, the
 [qtl2geno](https://github.com/rqtl/qtl2geno),
 [qtl2scan](https://github.com/rqtl/qtl2scan),
-[qtl2plot](https://github.com/rqtl/qtl2plot), and
-[qtl2convert](https://github.com/rqtl/qtl2convert) packages, plus a
+[qtl2plot](https://github.com/rqtl/qtl2plot),
+[qtl2convert](https://github.com/rqtl/qtl2convert) and
+[qtl2db](https://github.com/rqtl/qtl2db) packages, plus a
 bunch of dependencies, will be installed.
 
 Alternatively, you can install R/qtl2 from its source on
