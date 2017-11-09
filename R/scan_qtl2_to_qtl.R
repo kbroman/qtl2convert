@@ -2,7 +2,7 @@
 #
 #' Convert scan1 results to the scanone format
 #'
-#' Convert the results of [qtl2geno::scan1()]
+#' Convert the results of [qtl2scan::scan1()]
 #' to the form used by the R/qtl function
 #' [qtl::scanone()].
 #'

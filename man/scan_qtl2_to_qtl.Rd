@@ -18,7 +18,7 @@ chromosome and position columns followed by the LOD scores in
 \code{scan1_output}.
 }
 \description{
-Convert the results of \code{\link[qtl2geno:scan1]{qtl2geno::scan1()}}
+Convert the results of \code{\link[qtl2scan:scan1]{qtl2scan::scan1()}}
 to the form used by the R/qtl function
 \code{\link[qtl:scanone]{qtl::scanone()}}.
 }
