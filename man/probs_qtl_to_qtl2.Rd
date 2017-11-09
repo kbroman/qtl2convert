@@ -8,14 +8,16 @@ probs_qtl_to_qtl2(cross)
 }
 \arguments{
 \item{cross}{An R/qtl \code{"cross"} object (see
-\code{\link[qtl]{read.cross} for details.} Must contain
+\code{\link[qtl:read.cross]{qtl::read.cross()}} for details.) Must contain
 genotype probabilities as calculated by
-\code{\link[qtl]{calc.genoprob}}.}
+\code{\link[qtl:calc.genoprob]{qtl::calc.genoprob()}}.}
 }
 \value{
 A list with two components:
-- \code{"probs"} - the genotype probabilities in the form produced by \code{\link[qtl2geno]{calc_genoprob}}
-- \code{"map"} - Map of marker/pseudomarker positions (a list of vectors of positions)
+\itemize{
+\item \code{"probs"} - the genotype probabilities in the form produced by \code{\link[qtl2geno:calc_genoprob]{qtl2geno::calc_genoprob()}}
+\item \code{"map"} - Map of marker/pseudomarker positions (a list of vectors of positions)
+}
 }
 \description{
 Convert R/qtl genotype probabilities to R/qtl2 format

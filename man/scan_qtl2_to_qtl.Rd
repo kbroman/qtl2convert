@@ -8,7 +8,7 @@ scan_qtl2_to_qtl(scan1_output, map)
 }
 \arguments{
 \item{scan1_output}{Matrix of LOD scores, as calculated by
-\code{\link[qtl2scan]{scan1}}.}
+\code{\link[qtl2scan:scan1]{qtl2scan::scan1()}}.}
 
 \item{map}{Map of markers/pseudomarkers (as a list of vectors).}
 }
@@ -18,9 +18,9 @@ chromosome and position columns followed by the LOD scores in
 \code{scan1_output}.
 }
 \description{
-Convert the results of \code{qtl2::scan1}
+Convert the results of \code{\link[qtl2:scan1]{qtl2::scan1()}}
 to the form used by the R/qtl function
-\code{qtl::scanone}.
+\code{\link[qtl:scanone]{qtl::scanone()}}.
 }
 \examples{
 library(qtl2geno)

@@ -35,5 +35,5 @@ map_list <- map_df_to_list(map, pos_column="pos")
 
 }
 \seealso{
-\code{\link{map_list_to_df}}
+\code{\link[=map_list_to_df]{map_list_to_df()}}
 }

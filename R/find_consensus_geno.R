@@ -5,12 +5,14 @@
 #' from a single inbred line, find the consensus genotype at each
 #' marker.
 #'
+#' @md
+#'
 #' @param genotypes Matrix of genotypes (markers x individuals)
 #' @param na.strings Genotypes to be considered as missing values.
 #'
-#' @return Vector of consensus genotypes, one value per row of \code{genotypes}
+#' @return Vector of consensus genotypes, one value per row of `genotypes`
 #'
-#' @seealso \code{\link{find_unique_geno}}, \code{\link{encode_geno}}
+#' @seealso [find_unique_geno()], [encode_geno()]
 #' @export
 #' @examples
 #' g <- rbind(c("NA", "N", "A", "A", "T", "G", NA, "H"),

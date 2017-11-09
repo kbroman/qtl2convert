@@ -3,6 +3,8 @@
 #'
 #' Write a data frame to a CSV file in a special form, with info about the number of rows and columns.
 #'
+#' @md
+#'
 #' @param df A data frame (or matrix)
 #' @param filename File name to write
 #' @param comment Comment to place on the first line
@@ -14,7 +16,7 @@
 #' @details
 #' If the file already exists, the function will refuse to write over it.
 #'
-#' The file will include comments at the top, using \code{#} as a
+#' The file will include comments at the top, using `#` as a
 #' comment character, including the number of rows (not including the
 #' header) and the number of columns.
 #'

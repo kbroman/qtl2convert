@@ -29,5 +29,5 @@ g <- rbind(c("NA", "A",  "A",  "A", "T"),
 find_unique_geno(g)
 }
 \seealso{
-\code{\link{count_unique_geno}}, \code{\link{encode_geno}}
+\code{\link[=count_unique_geno]{count_unique_geno()}}, \code{\link[=encode_geno]{encode_geno()}}
 }

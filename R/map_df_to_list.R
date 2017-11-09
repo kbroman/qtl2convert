@@ -2,20 +2,22 @@
 #'
 #' Convert a marker map organized as data frame to a list
 #'
+#' @md
+#'
 #' @param map Data frame with marker map
 #'
-#' @param chr_column Name of the column in \code{map} that contains the chromosome IDs.
+#' @param chr_column Name of the column in `map` that contains the chromosome IDs.
 #'
-#' @param pos_column Name of the column in \code{map} that contains the marker positions.
+#' @param pos_column Name of the column in `map` that contains the marker positions.
 #'
-#' @param marker_column Name of the column in \code{map} that contains
+#' @param marker_column Name of the column in `map` that contains
 #' the marker names. If NULL, use the row names.
 #'
 #' @param Xchr Vector of character strings indicating the name or
 #' names of the X chromosome. If NULL, assume there's no X
 #' chromosome.
 #'
-#' @seealso \code{\link{map_list_to_df}}
+#' @seealso [map_list_to_df()]
 #'
 #' @return A list of vectors of marker positions, one component per chromosome
 #'

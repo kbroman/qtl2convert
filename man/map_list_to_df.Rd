@@ -30,5 +30,5 @@ iron_map <- map_list_to_df(iron$gmap)
 
 }
 \seealso{
-\code{\link{map_df_to_list}}
+\code{\link[=map_df_to_list]{map_df_to_list()}}
 }

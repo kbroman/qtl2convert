@@ -2,17 +2,19 @@
 #
 #' Convert scan1 results to the scanone format
 #'
-#' Convert the results of \code{qtl2::scan1}
+#' Convert the results of [qtl2::scan1()]
 #' to the form used by the R/qtl function
-#' \code{qtl::scanone}.
+#' [qtl::scanone()].
+#'
+#' @md
 #'
 #' @param scan1_output Matrix of LOD scores, as calculated by
-#' \code{\link[qtl2scan]{scan1}}.
+#' [qtl2scan::scan1()].
 #' @param map Map of markers/pseudomarkers (as a list of vectors).
 #'
-#' @return A data frame with class \code{"scanone"}, containing
+#' @return A data frame with class `"scanone"`, containing
 #' chromosome and position columns followed by the LOD scores in
-#' \code{scan1_output}.
+#' `scan1_output`.
 #'
 #' @examples
 #' library(qtl2geno)

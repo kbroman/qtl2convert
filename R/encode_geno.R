@@ -3,13 +3,15 @@
 #'
 #' Encode a matrix of genotypes using a set of allele codes.
 #'
+#' @md
+#'
 #' @param geno Character matrix of genotypes
 #' @param allele_codes Two-column matrix of alleles
 #' @param output_codes Vector of length four, with missing, AA, AB, BB codes
 #'
-#' @return Matrix of same dimensions as \code{geno}, but with values in \code{output_codes}.
+#' @return Matrix of same dimensions as `geno`, but with values in `output_codes`.
 #'
-#' @seealso \code{\link{find_consensus_geno}}, \code{\link{find_unique_geno}}
+#' @seealso [find_consensus_geno()], [find_unique_geno()]
 #' @export
 #' @examples
 #' geno <- rbind(c("C", "G", "C",  "GG", "CG"),

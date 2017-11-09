@@ -5,14 +5,16 @@
 #' find the unique genotypes for each marker, provided that there are exactly two.
 #' (If more than two or fewer than two, return NAs.)
 #'
+#' @md
+#'
 #' @param genotypes Matrix of genotypes (markers x individuals)
 #' @param na.strings Genotypes to be considered as missing values.
 #'
 #' @return Matrix with two columns. Each row corresponds to a marker,
-#' and has the two unique genotypes, or \code{NA}s (if >2 or <2 unique
+#' and has the two unique genotypes, or `NA`s (if >2 or <2 unique
 #' genotypes).
 #'
-#' @seealso \code{\link{count_unique_geno}}, \code{\link{encode_geno}}
+#' @seealso [count_unique_geno()], [encode_geno()]
 #' @export
 #' @examples
 #' g <- rbind(c("NA", "A",  "A",  "A", "T"),

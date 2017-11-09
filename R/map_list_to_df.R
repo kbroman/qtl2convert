@@ -2,6 +2,8 @@
 #'
 #' Convert a marker map organized as a list to a data frame
 #'
+#' @md
+#'
 #' @param map_list List of vectors containing marker positions
 #'
 #' @param chr_column Name of the chromosome column in the output
@@ -11,7 +13,7 @@
 #' @param marker_column Name of the marker column in the output.
 #' If NULL, just put them as row names.
 #'
-#' @seealso \code{\link{map_df_to_list}}
+#' @seealso [map_df_to_list()]
 #'
 #' @return A data frame with the marker positions.
 #'

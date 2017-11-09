@@ -4,12 +4,14 @@
 #' For genotype data (markers x individuals) on a set of individuals,
 #' count the unique genotypes for each marker
 #'
+#' @md
+#'
 #' @param genotypes Matrix of genotypes (markers x individuals)
 #' @param na.strings Genotypes to be considered as missing values.
 #'
 #' @return Vector of counts of unique genotypes.
 #'
-#' @seealso \code{\link{find_unique_geno}}
+#' @seealso [find_unique_geno()]
 #' @export
 #' @examples
 #' g <- rbind(c("NA", "A",  "A",  "A", "T"),

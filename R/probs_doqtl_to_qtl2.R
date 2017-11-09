@@ -2,18 +2,20 @@
 #'
 #' Convert DOQTL genotype probabilities to R/qtl2 format
 #'
+#' @md
+#'
 #' @param probs 3d array of genotype probabilities as calculated from DOQTL
 #'
 #' @param map Data frame with marker map
 #'
-#' @param chr_column Name of the column in \code{map} that contains the chromosome IDs.
+#' @param chr_column Name of the column in `map` that contains the chromosome IDs.
 #'
-#' @param pos_column Name of the column in \code{map} that contains the marker positions.
+#' @param pos_column Name of the column in `map` that contains the marker positions.
 #'
-#' @param marker_column Name of the column in \code{map} that contains
+#' @param marker_column Name of the column in `map` that contains
 #' the marker names. If NULL, use the row names.
 #'
-#' @return An object of the form produced by \code{\link[qtl2geno]{calc_genoprob}}.
+#' @return An object of the form produced by [qtl2geno::calc_genoprob()].
 #'
 #' @export
 probs_doqtl_to_qtl2 <-

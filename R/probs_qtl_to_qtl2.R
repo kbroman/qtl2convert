@@ -2,14 +2,16 @@
 #'
 #' Convert R/qtl genotype probabilities to R/qtl2 format
 #'
-#' @param cross An R/qtl \code{"cross"} object (see
-#'     \code{\link[qtl]{read.cross} for details.} Must contain
+#' @md
+#'
+#' @param cross An R/qtl `"cross"` object (see
+#'     [qtl::read.cross()] for details.) Must contain
 #'     genotype probabilities as calculated by
-#'     \code{\link[qtl]{calc.genoprob}}.
+#'     [qtl::calc.genoprob()].
 #'
 #' @return A list with two components:
-#' - \code{"probs"} - the genotype probabilities in the form produced by \code{\link[qtl2geno]{calc_genoprob}}
-#' - \code{"map"} - Map of marker/pseudomarker positions (a list of vectors of positions)
+#' * `"probs"` - the genotype probabilities in the form produced by [qtl2geno::calc_genoprob()]
+#' * `"map"` - Map of marker/pseudomarker positions (a list of vectors of positions)
 #'
 #' @examples
 #' library(qtl)
