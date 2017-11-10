@@ -122,22 +122,22 @@ probs_doqtl_to_qtl2 <-
         if(i == "X" && n_geno==36) { # need to pull apart the males and females
             newprobs[[i]] <- array(0, dim=c(nrow(probs), ncol(probs)+8, sum(chr==i)))
             dimnames(newprobs[[i]]) <- list(rownames(probs),
-                                            c(new_geno_order, paste0(LETTERS[1:8], "Y")),
-                                            dimnames(probs)[[3]])
+                                            c(new_geno_labels, paste0(LETTERS[1:8], "Y")),
+                                            dimnames(probs)[[3]][chr==i])
 
             if(is.null(is_female)) { # need to guess sex
                 het_tolerance <- 1e-4
 
                 hom <- paste0(LETTERS[1:8], LETTERS[1:8])
                 het <- old_geno_labels[!(old_geno_labels %in% hom)]
-                sum_het <- apply(probs[,het,chr==i], 1, sum)/dim(probs[[3]])
+                sum_het <- apply(probs[,het,chr==i,drop=FALSE], 1, sum)/dim(probs)[[3]]
                 is_female <- setNames((sum_het > het_tolerance), rownames(probs))
             }
             if(any(is_female)) {
                 newprobs[[i]][is_female, 1:36, ] <- probs[is_female, new_geno_order, chr==i, drop=FALSE]
             }
             if(any(!is_female)) {
-                newprobs[[i]][!is_female, 37:44, ] <- probs[is_female, hom, chr==i, drop=FALSE]
+                newprobs[[i]][!is_female, 37:44, ] <- probs[!is_female, hom, chr==i, drop=FALSE]
             }
         }
     }
