@@ -4,13 +4,17 @@
 \alias{probs_doqtl_to_qtl2}
 \title{Convert DOQTL genotype probabilities to R/qtl2 format}
 \usage{
-probs_doqtl_to_qtl2(probs, map, chr_column = "chr", pos_column = "cM",
-  marker_column = "marker")
+probs_doqtl_to_qtl2(probs, map, is_female = NULL, chr_column = "chr",
+  pos_column = "cM", marker_column = "marker")
 }
 \arguments{
 \item{probs}{3d array of genotype probabilities as calculated from DOQTL}
 
 \item{map}{Data frame with marker map}
+
+\item{is_female}{Optional logical vector indicating which
+individuals are female. Names should contain the individual
+identifiers, matching the row names in \code{probs}.}
 
 \item{chr_column}{Name of the column in \code{map} that contains the chromosome IDs.}
 
@@ -24,4 +28,15 @@ An object of the form produced by \code{\link[qtl2geno:calc_genoprob]{qtl2geno::
 }
 \description{
 Convert DOQTL genotype probabilities to R/qtl2 format
+}
+\details{
+We assume that the X chromosome is labeled \code{"X"} (must be
+upper-case) and that any other chromosomes are autosomes.
+We assume that the genotypes are labeled using the 8 letters A-H.
+
+If the probabilities are for the full 36 states and the X
+chromosome is included but \code{is_female} is not provided, we'll guess
+which individuals are females based on their genotype
+probabilities. (If the average, across loci, of the sum of the
+heterozygote probabilities is small, we'll assume it's a female.)
 }
