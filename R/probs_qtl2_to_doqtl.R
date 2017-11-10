@@ -5,7 +5,7 @@
 #' @md
 #'
 #' @param probs A `"calc_genoprob"` object (a list of 3d arrays of
-#' genotype probabilities), as calculated by [calc_genoprob()].
+#' genotype probabilities), as calculated by [qtl2geno::calc_genoprob()].
 #'
 #' @return A single three-dimensional array, for use with
 #'     [DOQTL](https://github.com/dmgatti/DOQTL).

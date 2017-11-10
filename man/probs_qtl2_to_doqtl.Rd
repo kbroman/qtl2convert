@@ -8,7 +8,7 @@ probs_qtl2_to_doqtl(probs)
 }
 \arguments{
 \item{probs}{A \code{"calc_genoprob"} object (a list of 3d arrays of
-genotype probabilities), as calculated by \code{\link[=calc_genoprob]{calc_genoprob()}}.}
+genotype probabilities), as calculated by \code{\link[qtl2geno:calc_genoprob]{qtl2geno::calc_genoprob()}}.}
 }
 \value{
 A single three-dimensional array, for use with
