@@ -1,8 +1,17 @@
+## qtl2convert 0.5-10 (2017-11-09)
+
+### New features
+
+- Added function `probs_qtl2_to_doqtl()` for converting the
+  `calc_genoprob()` output from the R/qtl2 format to a single big
+  3-dimensional array, for use with DOQTL.
+
+
 ## qtl2convert 0.5-6 (2017-06-08)
 
 ### New features
 
-- Revised probs_doqtl_to_qtl2 so that the genotypes are reordered
+- Revised `probs_doqtl_to_qtl2()` so that the genotypes are reordered
   appropriately. Still not sure about X chromosome, though.
 
 
