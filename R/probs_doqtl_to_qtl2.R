@@ -50,39 +50,49 @@ probs_doqtl_to_qtl2 <-
     probs <- probs[,,m, drop=FALSE]
 
     # reorder from (AA, AB, AC, AD, AE, ...) to (AA, AB, BB, AC, BC, CC, AD, ...)
-    new_geno_order <- c(1L, 2L, 9L, 3L, 10L, 16L, 4L, 11L, 17L, 22L, 5L, 12L, 18L,
-                        23L, 27L, 6L, 13L, 19L, 24L, 28L, 31L, 7L, 14L, 20L, 25L, 29L,
-                        32L, 34L, 8L, 15L, 21L, 26L, 30L, 33L, 35L, 36L)
+    mat <- rbind(rep(1:8, each=8), rep(1:8, 8))
+    old_geno_labels <- apply(mat[,mat[1,] <= mat[2,]], 2, function(a) paste(LETTERS[a], collapse=""))
+
+    new_geno_labels <- c("AA", "AB", "BB", "AC", "BC", "CC", "AD", "BD", "CD", "DD", "AE", "BE",
+                         "CE", "DE", "EE", "AF", "BF", "CF", "DF", "EF", "FF", "AG", "BG", "CG",
+                         "DG", "EG", "FG", "GG", "AH", "BH", "CH", "DH", "EH", "FH", "GH", "HH")
+
+    new_geno_order <- match(new_geno_labels, old_geno_labels)
+
+    n_geno <- ncol(probs)
 
     # split probs (and reorder if necessary)
     chr <- map[,chr_column]
-    uchr <- unique(chr)
-    newprobs <- vector("list", length(uchr))
-    names(newprobs) <- uchr
+    if(is.factor(chr)) uchr <- levels(chr)
+    else uchr <- unique(chr)
+
+    newprobs <- setNames(vector("list", length(uchr)), uchr)
     for(i in uchr) {
-        newprobs[[i]] <- probs[,,chr==i]
-        if(ncol(newprobs[[i]])==36) { # reorder them
-            newprobs[[i]] <- newprobs[[i]][,new_geno_order,,drop=FALSE]
+        if(n_geno == 36) {
+            newprobs[[i]] <- probs[,new_geno_order,chr==i]
+        } else {
+            newprobs[[i]] <- probs[,, chr==i]
         }
     }
-    probs <- newprobs
-    rm(newprobs)
 
     is_x_chr <- (uchr=="X")
     names(is_x_chr) <- uchr
 
-    alleles <- LETTERS[1:8]
-    if(ncol(probs[[1]])==8) {
+    # need to fix X chr probabilities, but we don't know individuals sex
+    # ... need to add it as an input
+
+
+    if(n_geno == 8) {
         alleleprobs <- TRUE
     } else {
         alleleprobs <- FALSE
     }
 
-    attr(probs, "is_x_chr") <- is_x_chr
-    attr(probs, "crosstype") <- "do"
-    attr(probs, "alleles") <- LETTERS[1:8]
-    attr(probs, "alleleprobs") <- alleleprobs
+    attr(newprobs, "is_x_chr") <- is_x_chr
+    attr(newprobs, "crosstype") <- "do"
+    attr(newprobs, "alleles") <- LETTERS[1:8]
+    attr(newprobs, "alleleprobs") <- alleleprobs
 
-    class(probs) <- c("calc_genoprob", "list")
-    probs
+    class(newprobs) <- c("calc_genoprob", "list")
+    newprobs
 }
