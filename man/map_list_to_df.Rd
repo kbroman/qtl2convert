@@ -24,6 +24,7 @@ A data frame with the marker positions.
 Convert a marker map organized as a list to a data frame
 }
 \examples{
+library(qtl2)
 iron <- read_cross2(system.file("extdata", "iron.zip", package="qtl2"))
 iron_map <- map_list_to_df(iron$gmap)
 
