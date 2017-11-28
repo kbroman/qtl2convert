@@ -19,7 +19,7 @@
 #' @param marker_column Name of the column in `map` that contains
 #' the marker names. If NULL, use the row names.
 #'
-#' @return An object of the form produced by [qtl2geno::calc_genoprob()].
+#' @return An object of the form produced by [qtl2::calc_genoprob()].
 #'
 #' @details
 #' We assume that the X chromosome is labeled `"X"` (must be

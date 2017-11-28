@@ -8,7 +8,7 @@ scan_qtl2_to_qtl(scan1_output, map)
 }
 \arguments{
 \item{scan1_output}{Matrix of LOD scores, as calculated by
-\code{\link[qtl2scan:scan1]{qtl2scan::scan1()}}.}
+\code{\link[qtl2:scan1]{qtl2::scan1()}}.}
 
 \item{map}{Map of markers/pseudomarkers (as a list of vectors).}
 }
@@ -18,20 +18,19 @@ chromosome and position columns followed by the LOD scores in
 \code{scan1_output}.
 }
 \description{
-Convert the results of \code{\link[qtl2scan:scan1]{qtl2scan::scan1()}}
+Convert the results of \code{\link[qtl2:scan1]{qtl2::scan1()}}
 to the form used by the R/qtl function
 \code{\link[qtl:scanone]{qtl::scanone()}}.
 }
 \examples{
-library(qtl2geno)
-iron <- read_cross2(system.file("extdata", "iron.zip", package="qtl2geno"))
+library(qtl2)
+iron <- read_cross2(system.file("extdata", "iron.zip", package="qtl2"))
 map <- insert_pseudomarkers(iron$gmap, step=1)
 probs <- calc_genoprob(iron, map, error_prob=0.002)
 pheno <- iron$pheno
 covar <- match(iron$covar$sex, c("f", "m")) # make numeric
 names(covar) <- rownames(iron$covar)
 Xcovar <- get_x_covar(iron)
-library(qtl2scan)
 out <- scan1(probs, pheno, addcovar=covar, Xcovar=Xcovar)
 
 out_rev <- scan_qtl2_to_qtl(out, map)

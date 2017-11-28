@@ -15,7 +15,7 @@ genotype probabilities as calculated by
 \value{
 A list with two components:
 \itemize{
-\item \code{"probs"} - the genotype probabilities in the form produced by \code{\link[qtl2geno:calc_genoprob]{qtl2geno::calc_genoprob()}}
+\item \code{"probs"} - the genotype probabilities in the form produced by \code{\link[qtl2:calc_genoprob]{qtl2::calc_genoprob()}}
 \item \code{"map"} - Map of marker/pseudomarker positions (a list of vectors of positions)
 }
 }
