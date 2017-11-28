@@ -16,12 +16,11 @@ test_that("scan_qtl2_to_qtl works", {
         names(pmap[[i]]) <- paste0("c", names(pmap)[i], ".",
                                    names(pmap[[i]]))
 
-    library(qtl2geno)
+    library(qtl2)
     hyper2 <- convert2cross2(hyper)
     map <- insert_pseudomarkers(pull.map(hyper), pseudomarker_map=pmap)
 
     pr <- calc_genoprob(hyper2, map, err=0.01)
-    library(qtl2scan)
     out_scan1 <- scan1(pr, hyper$pheno[,1,drop=FALSE])
 
     # adjustments to scanone output

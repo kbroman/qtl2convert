@@ -10,7 +10,7 @@
 #'     [qtl::calc.genoprob()].
 #'
 #' @return A list with two components:
-#' * `"probs"` - the genotype probabilities in the form produced by [qtl2geno::calc_genoprob()]
+#' * `"probs"` - the genotype probabilities in the form produced by [qtl2::calc_genoprob()]
 #' * `"map"` - Map of marker/pseudomarker positions (a list of vectors of positions)
 #'
 #' @examples

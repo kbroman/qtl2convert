@@ -24,7 +24,7 @@ identifiers, matching the row names in \code{probs}.}
 the marker names. If NULL, use the row names.}
 }
 \value{
-An object of the form produced by \code{\link[qtl2geno:calc_genoprob]{qtl2geno::calc_genoprob()}}.
+An object of the form produced by \code{\link[qtl2:calc_genoprob]{qtl2::calc_genoprob()}}.
 }
 \description{
 Convert DOQTL genotype probabilities to R/qtl2 format
