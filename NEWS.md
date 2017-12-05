@@ -1,3 +1,21 @@
+## qtl2convert 0.7-2 (2017-12-05)
+
+### New features
+
+- Added a new function `probs_qtl2_to_array()` for converting an
+  R/qtl2 genotype probabilities object (well, just the autosomal part)
+  into a three-dimensional array. This is particularly for use in
+  comparing two sets of genotype probabilities to look for sample
+  mix-ups (e.g., with the [R/lineup2](https://github.com/kbroman/lineup2)
+  package.
+
+
+## qtl2convert 0.7-1 (2017-11-27)
+
+- Revised to go with the merge of qtl2geno, qtl2scan, qtl2plot, and
+  qtl2db into a single package (R/qtl2)
+
+
 ## qtl2convert 0.5-10 (2017-11-09)
 
 ### New features
