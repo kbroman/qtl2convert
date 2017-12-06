@@ -5,6 +5,7 @@
 #' @md
 #'
 #' @param probs 3d array of genotype probabilities as calculated from DOQTL
+#' (individuals x genotypes x positions)
 #'
 #' @param map Data frame with marker map
 #'

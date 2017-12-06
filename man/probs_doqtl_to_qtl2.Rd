@@ -8,7 +8,8 @@ probs_doqtl_to_qtl2(probs, map, is_female = NULL, chr_column = "chr",
   pos_column = "cM", marker_column = "marker")
 }
 \arguments{
-\item{probs}{3d array of genotype probabilities as calculated from DOQTL}
+\item{probs}{3d array of genotype probabilities as calculated from DOQTL
+(individuals x genotypes x positions)}
 
 \item{map}{Data frame with marker map}
 
