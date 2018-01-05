@@ -1,3 +1,8 @@
+## qtl2convert 0.8 (2018-01-05)
+
+- First formal release
+
+
 ## qtl2convert 0.7-2 (2017-12-05)
 
 ### New features
