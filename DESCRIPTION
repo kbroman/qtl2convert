@@ -23,5 +23,6 @@ BugReports: https://github.com/rqtl/qtl2convert/issues
 LinkingTo: Rcpp
 LazyData: true
 Encoding: UTF-8
+ByteCompile: true
 RoxygenNote: 6.0.1
 Remotes: rqtl/qtl2
