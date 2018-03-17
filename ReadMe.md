@@ -17,7 +17,7 @@ and [R/qtl](https://rqtl.org) formats.
 
 ### Installation
 
-Make sure you have the latest version of [R (3.4.3)](https://cran.r-project.org).
+Make sure you have the latest version of [R (3.4.4)](https://cran.r-project.org).
 Then install R/qtl2 using the following. (For more
 detail, see the instructions at <http://kbroman.org/qtl2>.)
 
