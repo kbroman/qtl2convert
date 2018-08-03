@@ -25,6 +25,8 @@ function(genotypes, na.strings=c("N", "H", "NA", ""))
 {
     genotypes[is.na(genotypes) | (genotypes %in% na.strings)]  <- "NA"
 
+    if(!is.matrix(genotypes)) genotypes <- as.matrix(genotypes)
+
     result <- .find_consensus_geno(genotypes)
     result[result=="NA"] <- NA
     names(result) <- rownames(genotypes)

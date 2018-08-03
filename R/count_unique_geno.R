@@ -24,6 +24,9 @@ function(genotypes, na.strings=c("N", "H", "NA", ""))
 {
     genotypes[is.na(genotypes) | (genotypes %in% na.strings)]  <- "NA"
 
+    # force to be a matrix
+    if(!is.matrix(genotypes)) genotypes <- as.matrix(genotypes)
+
     result <- .count_unique_geno(genotypes)
     names(result) <- rownames(genotypes)
 
