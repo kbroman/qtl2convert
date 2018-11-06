@@ -12,7 +12,7 @@
 #' @param comment.char Character to use to initiate the comment lines
 #' @param overwrite If TRUE, overwrite file if it exists. If FALSE
 #' (the default) and the file exists, stop with an error.
-#'#'
+#'
 #' @details
 #' If the file already exists, the function will refuse to write over it.
 #'

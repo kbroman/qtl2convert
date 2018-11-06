@@ -19,8 +19,7 @@ write2csv(df, filename, comment = "", sep = ",", comment.char = "#",
 \item{comment.char}{Character to use to initiate the comment lines}
 
 \item{overwrite}{If TRUE, overwrite file if it exists. If FALSE
-(the default) and the file exists, stop with an error.
-#'}
+(the default) and the file exists, stop with an error.}
 }
 \description{
 Write a data frame to a CSV file in a special form, with info about the number of rows and columns.
