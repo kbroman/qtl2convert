@@ -15,7 +15,7 @@ test_that("probs_qtl_to_qtl2 works for backcross", {
 
     result <- probs_qtl_to_qtl2(hyper)
     expect_equal(result$map, m)
-    expect_equal(result$probs, pr)
+    expect_equal(result$probs, pr, tolerance=1e-5)
 
 })
 
