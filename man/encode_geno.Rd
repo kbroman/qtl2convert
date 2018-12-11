@@ -4,7 +4,8 @@
 \alias{encode_geno}
 \title{Encode a matrix of genotypes using a set of allele codes}
 \usage{
-encode_geno(geno, allele_codes, output_codes = c("-", "A", "H", "B"))
+encode_geno(geno, allele_codes, output_codes = c("-", "A", "H", "B"),
+  cores = 1)
 }
 \arguments{
 \item{geno}{Character matrix of genotypes}
@@ -12,6 +13,11 @@ encode_geno(geno, allele_codes, output_codes = c("-", "A", "H", "B"))
 \item{allele_codes}{Two-column matrix of alleles}
 
 \item{output_codes}{Vector of length four, with missing, AA, AB, BB codes}
+
+\item{cores}{Number of CPU cores to use, for parallel calculations.
+(If \code{0}, use \code{\link[parallel:detectCores]{parallel::detectCores()}}.)
+Alternatively, this can be links to a set of cluster sockets, as
+produced by \code{\link[parallel:makeCluster]{parallel::makeCluster()}}.}
 }
 \value{
 Matrix of same dimensions as \code{geno}, but with values in \code{output_codes}.
