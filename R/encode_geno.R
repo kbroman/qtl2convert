@@ -5,8 +5,8 @@
 #'
 #' @md
 #'
-#' @param geno Character matrix of genotypes
-#' @param allele_codes Two-column matrix of alleles
+#' @param geno Character matrix of genotypes (rows as markers, columns as individuals)
+#' @param allele_codes Two-column matrix of alleles (rows as markers)
 #' @param output_codes Vector of length four, with missing, AA, AB, BB codes
 #' @param cores Number of CPU cores to use, for parallel calculations.
 #' (If `0`, use [parallel::detectCores()].)

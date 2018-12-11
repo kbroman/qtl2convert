@@ -8,9 +8,9 @@ encode_geno(geno, allele_codes, output_codes = c("-", "A", "H", "B"),
   cores = 1)
 }
 \arguments{
-\item{geno}{Character matrix of genotypes}
+\item{geno}{Character matrix of genotypes (rows as markers, columns as individuals)}
 
-\item{allele_codes}{Two-column matrix of alleles}
+\item{allele_codes}{Two-column matrix of alleles (rows as markers)}
 
 \item{output_codes}{Vector of length four, with missing, AA, AB, BB codes}
 
