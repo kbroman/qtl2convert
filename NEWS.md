@@ -1,8 +1,11 @@
 ## qtl2convert 0.17-3 (2017-12-11)
 
 - Small changes to `find_unique_geno()`, `count_unique_geno()`, and
-  `find_consensus_geno()` to allow input to be a data frame. Also,
-  add `cores` argument to enable multi-core calculations.
+  `find_consensus_geno()` to allow input to be a data frame.
+
+- Enable multi-core calculatings (adding `cores` argument) to
+  `find_unique_geno()`, `count_unique_geno()`,
+  `find_consensus_geno()`, and `encode_geno()`.
 
 
 ## qtl2convert 0.16 (2018-07-23)
