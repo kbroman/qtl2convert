@@ -4,12 +4,18 @@
 \alias{find_consensus_geno}
 \title{Find the consensus genotype for each row of a genotype matrix}
 \usage{
-find_consensus_geno(genotypes, na.strings = c("N", "H", "NA", ""))
+find_consensus_geno(genotypes, na.strings = c("N", "H", "NA", ""),
+  cores = 1)
 }
 \arguments{
 \item{genotypes}{Matrix of genotypes (markers x individuals)}
 
 \item{na.strings}{Genotypes to be considered as missing values.}
+
+\item{cores}{Number of CPU cores to use, for parallel calculations.
+(If \code{0}, use \code{\link[parallel:detectCores]{parallel::detectCores()}}.)
+Alternatively, this can be links to a set of cluster sockets, as
+produced by \code{\link[parallel:makeCluster]{parallel::makeCluster()}}.}
 }
 \value{
 Vector of consensus genotypes, one value per row of \code{genotypes}

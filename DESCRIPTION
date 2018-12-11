@@ -1,6 +1,6 @@
 Package: qtl2convert
-Version: 0.17-2
-Date: 2018-11-06
+Version: 0.17-3
+Date: 2018-12-11
 Title: Convert Data among R/qtl2, R/qtl, and DOQTL
 Description: Functions to convert data structures among the R/qtl2, R/qtl, and DOQTL packages.
 Author: Karl W Broman <broman@wisc.edu>
@@ -10,13 +10,13 @@ Depends:
 Imports:
     Rcpp (>= 0.12.12),
     qtl (>= 1.40-8),
+    qtl2,
     utils,
     stats
 Suggests:
     testthat,
     devtools,
-    roxygen2,
-    qtl2 (>= 0.8)
+    roxygen2
 License: GPL-3
 URL: http://kbroman.org/qtl2, https://github.com/rqtl/qtl2convert
 BugReports: https://github.com/rqtl/qtl2convert/issues
@@ -24,5 +24,5 @@ LinkingTo: Rcpp
 LazyData: true
 Encoding: UTF-8
 ByteCompile: true
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 Remotes: rqtl/qtl2

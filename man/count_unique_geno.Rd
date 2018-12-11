@@ -4,12 +4,18 @@
 \alias{count_unique_geno}
 \title{Count the unique genotypes for each row of a genotype matrix}
 \usage{
-count_unique_geno(genotypes, na.strings = c("N", "H", "NA", ""))
+count_unique_geno(genotypes, na.strings = c("N", "H", "NA", ""),
+  cores = 1)
 }
 \arguments{
 \item{genotypes}{Matrix of genotypes (markers x individuals)}
 
 \item{na.strings}{Genotypes to be considered as missing values.}
+
+\item{cores}{Number of CPU cores to use, for parallel calculations.
+(If \code{0}, use \code{\link[parallel:detectCores]{parallel::detectCores()}}.)
+Alternatively, this can be links to a set of cluster sockets, as
+produced by \code{\link[parallel:makeCluster]{parallel::makeCluster()}}.}
 }
 \value{
 Vector of counts of unique genotypes.
