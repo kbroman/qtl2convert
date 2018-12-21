@@ -26,7 +26,7 @@
 scan_qtl_to_qtl2 <-
     function(scanone_output)
 {
-  scan1 <- as.matrix(scanone_output[,-(1:2)])
+  scan1 <- as.matrix(scanone_output[,-(1:2),drop=FALSE])
   class(scan1) <- c("scan1", "matrix")
 
   map_df <- cbind(as.data.frame(scanone_output[,1:2]), marker=rownames(scanone_output))
