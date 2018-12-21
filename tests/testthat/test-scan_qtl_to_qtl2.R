@@ -1,11 +1,12 @@
-context("convert qtl2::scan1 to qtl::scanone output")
+context("convert qtl2::scanone to qtl2::scan1 output")
 
-test_that("scan_qtl2_to_qtl works", {
+test_that("scan_qtl_to_qtl2 works", {
 
     library(qtl)
     data(hyper)
     hyper <- calc.genoprob(hyper[c(6,8),], step=2.5, err=0.01)
     out_scanone <- scanone(hyper, method="hk")
+    out_scan1_conv <- scan_qtl_to_qtl2(out_scanone)
 
     # pull out pseudomarker map and adjust names
     # (want to use the exact same map)
@@ -23,12 +24,7 @@ test_that("scan_qtl2_to_qtl works", {
     pr <- calc_genoprob(hyper2, map, err=0.01)
     out_scan1 <- scan1(pr, hyper$pheno[,1,drop=FALSE])
 
-    # adjustments to scanone output
-    colnames(out_scanone)[3] <- "bp"
-    for(atname in c("method", "type", "model"))
-        attr(out_scanone, atname) <- NULL
-
-    out_conv <- scan_qtl2_to_qtl(out_scan1, map)
-    expect_equal(out_conv, out_scanone)
+    expect_equivalent(out_scan1, out_scan1_conv$scan1)
+    expect_equivalent(map, out_scan1_conv$map)
 
 })

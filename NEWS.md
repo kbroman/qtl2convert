@@ -1,4 +1,7 @@
-## qtl2convert 0.17-3 (2017-12-11)
+## qtl2convert 0.17-4 (2017-12-21)
+
+- Added `scan_qtl_to_qtl2()` to convert `scanone()` output from R/qtl
+  into the new R/qtl2 `scan1()` format.
 
 - Small changes to `find_unique_geno()`, `count_unique_geno()`, and
   `find_consensus_geno()` to allow input to be a data frame.
