@@ -30,7 +30,7 @@ scan_qtl_to_qtl2 <-
   class(scan1) <- c("scan1", "matrix")
 
   map_df <- cbind(as.data.frame(scanone_output[,1:2]), marker=rownames(scanone_output))
-  map_list <- map_df_to_list(map_df, pos="pos")
+  map_list <- map_df_to_list(map_df, pos_column="pos")
 
   list(scan1=scan1, map=map_list)
 }
