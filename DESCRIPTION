@@ -10,7 +10,7 @@ Depends:
 Imports:
     Rcpp (>= 0.12.12),
     qtl (>= 1.40-8),
-    qtl2,
+    qtl2 (>= 0.17-10),
     utils,
     stats
 Suggests:

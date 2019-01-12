@@ -10,13 +10,9 @@
   `find_unique_geno()`, `count_unique_geno()`,
   `find_consensus_geno()`, and `encode_geno()`.
 
-- Added `cbind_expand()` for combining matrices using row names to
-  align the rows and expanding with missing values if there are rows
-  in some matrices but not others.
-
 - Added `cbind_smother()` for combining matrices, but
   "smothering" columns in the first matrix by those in the second
-  matrix that have the same name.
+  matrix that have the same name. Uses `qtl2::cbind_expand()`.
 
 
 ## qtl2convert 0.16 (2018-07-23)
