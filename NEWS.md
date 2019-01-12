@@ -1,4 +1,4 @@
-## qtl2convert 0.17-5 (2019-01-10)
+## qtl2convert 0.17-5 (2019-01-12)
 
 - Added `scan_qtl_to_qtl2()` to convert `scanone()` output from R/qtl
   into the new R/qtl2 `scan1()` format.
@@ -10,7 +10,11 @@
   `find_unique_geno()`, `count_unique_geno()`,
   `find_consensus_geno()`, and `encode_geno()`.
 
-- Added `cbind_smother()` for combining matrices by rows, but
+- Added `cbind_expand()` for combining matrices using row names to
+  align the rows and expanding with missing values if there are rows
+  in some matrices but not others.
+
+- Added `cbind_smother()` for combining matrices, but
   "smothering" columns in the first matrix by those in the second
   matrix that have the same name.
 
