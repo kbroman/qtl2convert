@@ -36,3 +36,6 @@ out <- scan1(probs, pheno, addcovar=covar, Xcovar=Xcovar)
 out_rev <- scan_qtl2_to_qtl(out, map)
 
 }
+\seealso{
+\code{\link[=scan_qtl2_to_qtl]{scan_qtl2_to_qtl()}}
+}

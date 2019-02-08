@@ -29,6 +29,8 @@
 #'
 #' out_rev <- scan_qtl2_to_qtl(out, map)
 #'
+#' @seealso [scan_qtl2_to_qtl()]
+#'
 #' @export
 scan_qtl2_to_qtl <-
     function(scan1_output, map)

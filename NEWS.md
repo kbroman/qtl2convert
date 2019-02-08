@@ -1,4 +1,7 @@
-## qtl2convert 0.17-3 (2017-12-11)
+## qtl2convert 0.18 (2019-02-08)
+
+- Added `scan_qtl_to_qtl2()` to convert `scanone()` output from R/qtl
+  into the new R/qtl2 `scan1()` format.
 
 - Small changes to `find_unique_geno()`, `count_unique_geno()`, and
   `find_consensus_geno()` to allow input to be a data frame.
@@ -6,6 +9,10 @@
 - Enable multi-core calculatings (adding `cores` argument) to
   `find_unique_geno()`, `count_unique_geno()`,
   `find_consensus_geno()`, and `encode_geno()`.
+
+- Added `cbind_smother()` for combining matrices, but
+  "smothering" columns in the first matrix by those in the second
+  matrix that have the same name. Uses `qtl2::cbind_expand()`.
 
 
 ## qtl2convert 0.16 (2018-07-23)
