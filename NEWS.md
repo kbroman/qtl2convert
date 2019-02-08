@@ -1,4 +1,4 @@
-## qtl2convert 0.17-5 (2019-01-12)
+## qtl2convert 0.18 (2019-02-08)
 
 - Added `scan_qtl_to_qtl2()` to convert `scanone()` output from R/qtl
   into the new R/qtl2 `scan1()` format.
