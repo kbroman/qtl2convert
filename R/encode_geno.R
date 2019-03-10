@@ -3,8 +3,6 @@
 #'
 #' Encode a matrix of genotypes using a set of allele codes.
 #'
-#' @md
-#'
 #' @param geno Character matrix of genotypes (rows as markers, columns as individuals)
 #' @param allele_codes Two-column matrix of alleles (rows as markers)
 #' @param output_codes Vector of length four, with missing, AA, AB, BB codes

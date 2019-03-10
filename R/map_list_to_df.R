@@ -2,8 +2,6 @@
 #'
 #' Convert a marker map organized as a list to a data frame
 #'
-#' @md
-#'
 #' @param map_list List of vectors containing marker positions
 #'
 #' @param chr_column Name of the chromosome column in the output

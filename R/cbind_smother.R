@@ -5,8 +5,6 @@
 #' the first matrix is deleted and that in the second matrix is used
 #' in its place.
 #'
-#' @md
-#'
 #' @param mat1 A matrix
 #' @param mat2 Another matrix, with the same number of rows as `mat`.
 #'

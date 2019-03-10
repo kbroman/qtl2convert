@@ -1,3 +1,8 @@
+## qtl2convert 0.19-1 (2019-03-10)
+
+- Use Markdown for function documentation, throughout
+
+
 ## qtl2convert 0.18 (2019-02-08)
 
 - Added `scan_qtl_to_qtl2()` to convert `scanone()` output from R/qtl

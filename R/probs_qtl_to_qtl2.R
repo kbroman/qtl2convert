@@ -2,8 +2,6 @@
 #'
 #' Convert R/qtl genotype probabilities to R/qtl2 format
 #'
-#' @md
-#'
 #' @param cross An R/qtl `"cross"` object (see
 #'     [qtl::read.cross()] for details.) Must contain
 #'     genotype probabilities as calculated by

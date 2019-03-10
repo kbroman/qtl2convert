@@ -2,8 +2,6 @@
 #'
 #' Convert the results of R/qtl1 [qtl::scanone()] to the form used by the R/qtl2 [qtl2::scan1()].
 #'
-#' @md
-#'
 #' @param scanone_output Data frame as output by the R/qtl1 function [qtl::scanone()].
 #'
 #' @return List with two objects: the LOD scores in [qtl2::scan1()]

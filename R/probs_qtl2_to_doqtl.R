@@ -2,8 +2,6 @@
 #'
 #' Convert R/qtl2 genotype probabilities to DOQTL format
 #'
-#' @md
-#'
 #' @param probs A `"calc_genoprob"` object (a list of 3d arrays of
 #' genotype probabilities), as calculated by [qtl2::calc_genoprob()].
 #'

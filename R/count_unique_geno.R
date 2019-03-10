@@ -4,8 +4,6 @@
 #' For genotype data (markers x individuals) on a set of individuals,
 #' count the unique genotypes for each marker
 #'
-#' @md
-#'
 #' @param genotypes Matrix of genotypes (markers x individuals)
 #' @param na.strings Genotypes to be considered as missing values.
 #' @param cores Number of CPU cores to use, for parallel calculations.

@@ -2,8 +2,6 @@
 #'
 #' Convert DOQTL genotype probabilities to R/qtl2 format
 #'
-#' @md
-#'
 #' @param probs 3d array of genotype probabilities as calculated from DOQTL
 #' (individuals x genotypes x positions)
 #'

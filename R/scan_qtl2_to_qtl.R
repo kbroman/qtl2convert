@@ -6,8 +6,6 @@
 #' to the form used by the R/qtl function
 #' [qtl::scanone()].
 #'
-#' @md
-#'
 #' @param scan1_output Matrix of LOD scores, as calculated by
 #' [qtl2::scan1()].
 #' @param map Map of markers/pseudomarkers (as a list of vectors).

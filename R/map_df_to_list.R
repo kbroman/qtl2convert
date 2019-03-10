@@ -2,8 +2,6 @@
 #'
 #' Convert a marker map organized as data frame to a list
 #'
-#' @md
-#'
 #' @param map Data frame with marker map
 #'
 #' @param chr_column Name of the column in `map` that contains the chromosome IDs.

@@ -5,8 +5,6 @@
 #' from a single inbred line, find the consensus genotype at each
 #' marker.
 #'
-#' @md
-#'
 #' @param genotypes Matrix of genotypes (markers x individuals)
 #' @param na.strings Genotypes to be considered as missing values.
 #' @param cores Number of CPU cores to use, for parallel calculations.

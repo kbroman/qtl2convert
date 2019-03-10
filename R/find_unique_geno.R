@@ -5,8 +5,6 @@
 #' find the unique genotypes for each marker, provided that there are exactly two.
 #' (If more than two or fewer than two, return NAs.)
 #'
-#' @md
-#'
 #' @param genotypes Matrix of genotypes (markers x individuals)
 #' @param na.strings Genotypes to be considered as missing values.
 #' @param cores Number of CPU cores to use, for parallel calculations.
