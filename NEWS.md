@@ -1,3 +1,9 @@
+## qtl2convert 0.21 (2019-09-21)
+
+- Have `map_df_to_list()` ensure that the positions in the output are
+  numeric.
+
+
 ## qtl2convert 0.20 (2019-06-03)
 
 - Use Markdown for function documentation, throughout

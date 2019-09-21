@@ -47,7 +47,7 @@ map_df_to_list <-
     uchr <- unique(chr)
     pos <- map[,pos_column]
 
-    result <- split(pos, factor(chr, levels=uchr))
+    result <- split(as.numeric(pos), factor(chr, levels=uchr))
     marker <- split(marker, factor(chr, levels=uchr))
     for(i in seq(along=result))
         names(result[[i]]) <- marker[[i]]
