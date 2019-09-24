@@ -66,4 +66,16 @@ test_that("map_df_to_list works", {
 
     expect_equal(map_df_to_list(df), expected)
 
+    # give error if position column not found
+    expect_error(map_df_to_list(df, pos_column="pos"))
+
+
+    # same thing with marker names as row names
+    rownames(df) <- df$marker
+    df <- df[,c("chr", "Mb_GRC38", "cM")]
+    expect_equal(map_df_to_list(df, marker_column=NULL), expected)
+
+    # give error if marker column not found
+    expect_error(map_df_to_list(df))
+
 })

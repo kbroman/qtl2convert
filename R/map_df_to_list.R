@@ -32,7 +32,7 @@ map_df_to_list <-
 {
     if(is.null(marker_column)) {
         marker_column <- "qtl2tmp_marker"
-        map[,marker_column] <- rownames(marker_column)
+        map[,marker_column] <- rownames(map)
     }
     if(!(marker_column %in% colnames(map)))
         stop('Column "', marker_column, '" not found.')
