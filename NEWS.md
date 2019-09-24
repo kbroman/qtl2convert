@@ -1,7 +1,12 @@
-## qtl2convert 0.21 (2019-09-21)
+## qtl2convert 0.21 (2019-09-24)
 
 - Have `map_df_to_list()` ensure that the positions in the output are
   numeric.
+
+- `write2csv()` now includes an argument `row.names`. If NULL or NA (the
+  default), row names are not written. Otherwise, row names are
+  included in the output, and this is taken to be the name of that column.
+  (Implements [Issue #19](https://github.com/rqtl/qtl2convert/issues/19).)
 
 
 ## qtl2convert 0.20 (2019-06-03)

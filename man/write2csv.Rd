@@ -5,7 +5,7 @@
 \title{Write a data frame to a CSV file}
 \usage{
 write2csv(df, filename, comment = "", sep = ",", comment.char = "#",
-  overwrite = FALSE)
+  row.names = NULL, overwrite = FALSE)
 }
 \arguments{
 \item{df}{A data frame (or matrix)}
@@ -17,6 +17,11 @@ write2csv(df, filename, comment = "", sep = ",", comment.char = "#",
 \item{sep}{Field separator}
 
 \item{comment.char}{Character to use to initiate the comment lines}
+
+\item{row.names}{If NA or NULL (the default), row names are not
+included in the output file. Otherwise, the row names are
+included as the first column of the output, and this is taken
+to be the name for that column.}
 
 \item{overwrite}{If TRUE, overwrite file if it exists. If FALSE
 (the default) and the file exists, stop with an error.}
@@ -31,7 +36,11 @@ The file will include comments at the top, using \code{#} as a
 comment character, including the number of rows (not including the
 header) and the number of columns.
 
-Row names are not included.
+By default, row names are not included. But with the option
+\code{row.names} provided as a character string, they are added as an
+initial column, with the value of this argument defining the name
+for that column. If a column with that name already exists, the
+function halts with an error.
 }
 \examples{
 nr <- 10

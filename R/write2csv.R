@@ -8,6 +8,10 @@
 #' @param comment Comment to place on the first line
 #' @param sep Field separator
 #' @param comment.char Character to use to initiate the comment lines
+#' @param row.names If NA or NULL (the default), row names are not
+#' included in the output file. Otherwise, the row names are
+#' included as the first column of the output, and this is taken
+#' to be the name for that column.
 #' @param overwrite If TRUE, overwrite file if it exists. If FALSE
 #' (the default) and the file exists, stop with an error.
 #'
@@ -18,7 +22,11 @@
 #' comment character, including the number of rows (not including the
 #' header) and the number of columns.
 #'
-#' Row names are not included.
+#' By default, row names are not included. But with the option
+#' `row.names` provided as a character string, they are added as an
+#' initial column, with the value of this argument defining the name
+#' for that column. If a column with that name already exists, the
+#' function halts with an error.
 #'
 #' @importFrom utils write.table
 #' @export
@@ -32,10 +40,31 @@
 #' \dontrun{
 #' write2csv(x, "/tmp/tmpfile.csv", "A file created by write2csv")}
 write2csv <-
-    function(df, filename, comment="", sep=",", comment.char="#", overwrite=FALSE)
+    function(df, filename, comment="", sep=",", comment.char="#",
+             row.names=NULL, overwrite=FALSE)
 {
     if(!overwrite && file.exists(filename))
         stop(filename, " already exits. Remove it first (or use overwrite=TRUE).")
+
+    if(!is.null(row.names) && !is.na(row.names)) {
+        if(length(row.names) > 1) {
+            row.names <- row.names[1]
+            warning("row.names should have length 1")
+        }
+        if(!is.character(row.names)) {
+            row.names <- as.character(row.names)
+            warning("row.names should be a character string")
+        }
+        if(row.names %in% colnames(df)) {
+            stop('There is already a column named "', row.names, '"')
+        }
+        if(is.null(rownames(df))) {
+            rownames(df) <- seq_len(nrow(df))
+        }
+
+        df <- cbind(rownames(df), df)
+        colnames(df)[1] <- row.names
+    }
 
     if(comment != '')
         cat(comment.char, " ", comment, "\n", file=filename, sep="")
