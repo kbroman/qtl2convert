@@ -1,4 +1,4 @@
-## qtl2convert 0.21 (2019-09-24)
+## qtl2convert 0.21 (2019-09-25)
 
 ### New features
 
@@ -18,6 +18,9 @@
 ### Bug fixes
 
 - Fix bug for the case `marker_column=NULL`.
+
+- `encode_geno()` now gives a warning if any allele codes have >1 character.
+  ([Issue #16](https://github.com/rqtl/qtl2convert/issues/16))
 
 
 ## qtl2convert 0.20 (2019-06-03)

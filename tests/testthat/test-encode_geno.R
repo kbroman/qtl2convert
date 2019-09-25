@@ -21,6 +21,12 @@ test_that("encode_geno works", {
 
     expect_equal(encode_geno(geno, cbind(codes[,2], codes[,1])), expected2)
 
+    # errors: multiple characters, NAs
+    expect_error(encode_geno(geno, cbind(paste0(codes[,1], codes[,1]), codes[,2])))
+    expect_error(encode_geno(geno, cbind(codes[,1], paste0(codes[,2], codes[,2]))))
+    codes[1,2] <- NA
+    expect_error(encode_geno(geno, codes))
+
 })
 
 

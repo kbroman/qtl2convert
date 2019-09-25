@@ -31,6 +31,9 @@ function(geno, allele_codes, output_codes=c("-", "A", "H", "B"), cores=1)
     stopifnot(nrow(geno) == nrow(allele_codes))
     stopifnot(ncol(allele_codes) == 2)
 
+    if(any(is.na(allele_codes))) stop("allele_codes can't have missing values")
+    if(any(nchar(allele_codes)>1)) stop("allele_codes should be single characters")
+
     if(!is.matrix(geno)) geno <- as.matrix(geno)
     if(!is.matrix(allele_codes)) allele_codes <- as.matrix(allele_codes)
 
