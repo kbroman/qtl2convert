@@ -25,20 +25,20 @@
 probs_qtl_to_qtl2 <-
     function(cross)
 {
-    if(!("cross" %in% class(cross)))
+    if(!inherits(cross, "cross"))
         stop("Input must be an R/qtl cross object")
     if(!("prob" %in% names(cross$geno[[1]])))
         stop("Input doesn't contain genotype probabilities from calc.genoprob")
 
     # treat bcsft as "f2" but return "bcsft" as the attribute
-    crosstype <- class(cross)[1]
+    crosstype <- qtl1_crosstype(cross)
     crosstype2 <- crosstype
     if(crosstype=="bcsft") crosstype2 <- "f2"
 
     chr <- names(cross$geno)
 
     # chromosome types -> is_x_chr
-    chrtype <- sapply(cross$geno, class)
+    chrtype <- sapply(cross$geno, qtl1_chrtype)
     chrtype[chrtype != "A" & chrtype != "X"] <- "A"
     is_x_chr <- stats::setNames(chrtype=="X", chr)
 
@@ -136,3 +136,23 @@ X_geno_names <-
     }
     gn
 }
+
+# R/qtl1 cross type
+qtl1_crosstype <-
+    function(cross)
+    {
+        type <- class(cross)
+        type <- type[type != "cross" & type != "list"]
+        if(length(type) > 1) {
+            warning("cross has multiple classes")
+        }
+        type[1]
+    }
+
+# R/qtl1 chromosome type
+qtl1_chrtype <-
+    function(object)
+    {
+        if(inherits(object, "X")) return("X")
+        "A"
+    }
