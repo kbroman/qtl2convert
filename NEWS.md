@@ -1,4 +1,4 @@
-## qtl2convert 0.21 (2019-09-25)
+## qtl2convert 0.22 (2020-05-21)
 
 ### New features
 
