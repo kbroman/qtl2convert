@@ -10,7 +10,7 @@ high-dimensional data and complex cross designs.
 
 The [qtl2convert](https://github.com/rqtl/qtl2convert) package is
 for converting data among the R/qtl2,
-[DOQTL](https://www.bioconductor.org/packages/release/bioc/html/DOQTL.html),
+[DOQTL](https://www.bioconductor.org/packages/3.9/bioc/html/DOQTL.html),
 and [R/qtl](https://rqtl.org) formats.
 
 ---
