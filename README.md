@@ -32,4 +32,4 @@ package.
 
 #### License
 
-[Licensed](LICENSE.md) under [GPL-3](https://www.r-project.org/Licenses/GPL-3).
+Licensed under [GPL-3](https://www.r-project.org/Licenses/GPL-3).
