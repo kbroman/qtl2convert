@@ -1,8 +1,8 @@
 Package: qtl2convert
 Version: 0.22
 Date: 2020-05-21
-Title: Convert Data among R/qtl2, R/qtl, and DOQTL
-Description: Functions to convert data structures among the R/qtl2, R/qtl, and DOQTL packages.
+Title: Convert Data among QTL Mapping Packages
+Description: Functions to convert data structures among the 'R/qtl2', 'R/qtl', and 'DOQTL' packages.
 Author: Karl W Broman [aut, cre] (<https://orcid.org/0000-0002-4914-6671>)
 Maintainer: Karl W Broman <broman@wisc.edu>
 Authors@R: c(person("Karl W", "Broman", role=c("aut", "cre"),
