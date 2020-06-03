@@ -4,8 +4,7 @@
 \alias{find_unique_geno}
 \title{Find the unique genotypes for each row of a genotype matrix}
 \usage{
-find_unique_geno(genotypes, na.strings = c("N", "H", "NA", ""),
-  cores = 1)
+find_unique_geno(genotypes, na.strings = c("N", "H", "NA", ""), cores = 1)
 }
 \arguments{
 \item{genotypes}{Matrix of genotypes (markers x individuals)}

@@ -4,8 +4,14 @@
 \alias{probs_doqtl_to_qtl2}
 \title{Convert DOQTL genotype probabilities to R/qtl2 format}
 \usage{
-probs_doqtl_to_qtl2(probs, map, is_female = NULL, chr_column = "chr",
-  pos_column = "cM", marker_column = "marker")
+probs_doqtl_to_qtl2(
+  probs,
+  map,
+  is_female = NULL,
+  chr_column = "chr",
+  pos_column = "cM",
+  marker_column = "marker"
+)
 }
 \arguments{
 \item{probs}{3d array of genotype probabilities as calculated from DOQTL

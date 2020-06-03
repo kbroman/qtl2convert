@@ -4,8 +4,7 @@
 \alias{find_consensus_geno}
 \title{Find the consensus genotype for each row of a genotype matrix}
 \usage{
-find_consensus_geno(genotypes, na.strings = c("N", "H", "NA", ""),
-  cores = 1)
+find_consensus_geno(genotypes, na.strings = c("N", "H", "NA", ""), cores = 1)
 }
 \arguments{
 \item{genotypes}{Matrix of genotypes (markers x individuals)}

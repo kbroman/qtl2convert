@@ -1,6 +1,6 @@
 Package: qtl2convert
-Version: 0.22
-Date: 2020-05-21
+Version: 0.22-2
+Date: 2020-06-02
 Title: Convert Data among QTL Mapping Packages
 Description: Functions to convert data structures among the 'R/qtl2', 'R/qtl', and 'DOQTL' packages.
 Author: Karl W Broman [aut, cre] (<https://orcid.org/0000-0002-4914-6671>)
@@ -26,6 +26,6 @@ LinkingTo: Rcpp
 LazyData: true
 Encoding: UTF-8
 ByteCompile: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 Roxygen: list(markdown=TRUE)
 Remotes: rqtl/qtl2

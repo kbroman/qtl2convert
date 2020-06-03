@@ -4,8 +4,13 @@
 \alias{map_df_to_list}
 \title{Marker map data frame to list}
 \usage{
-map_df_to_list(map, chr_column = "chr", pos_column = "cM",
-  marker_column = "marker", Xchr = c("x", "X"))
+map_df_to_list(
+  map,
+  chr_column = "chr",
+  pos_column = "cM",
+  marker_column = "marker",
+  Xchr = c("x", "X")
+)
 }
 \arguments{
 \item{map}{Data frame with marker map}

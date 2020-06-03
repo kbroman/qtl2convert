@@ -4,8 +4,7 @@
 \alias{count_unique_geno}
 \title{Count the unique genotypes for each row of a genotype matrix}
 \usage{
-count_unique_geno(genotypes, na.strings = c("N", "H", "NA", ""),
-  cores = 1)
+count_unique_geno(genotypes, na.strings = c("N", "H", "NA", ""), cores = 1)
 }
 \arguments{
 \item{genotypes}{Matrix of genotypes (markers x individuals)}

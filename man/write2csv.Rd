@@ -4,8 +4,15 @@
 \alias{write2csv}
 \title{Write a data frame to a CSV file}
 \usage{
-write2csv(df, filename, comment = "", sep = ",", comment.char = "#",
-  row.names = NULL, overwrite = FALSE)
+write2csv(
+  df,
+  filename,
+  comment = "",
+  sep = ",",
+  comment.char = "#",
+  row.names = NULL,
+  overwrite = FALSE
+)
 }
 \arguments{
 \item{df}{A data frame (or matrix)}
@@ -32,7 +39,7 @@ Write a data frame to a CSV file in a special form, with info about the number o
 \details{
 If the file already exists, the function will refuse to write over it.
 
-The file will include comments at the top, using \code{#} as a
+The file will include comments at the top, using \verb{#} as a
 comment character, including the number of rows (not including the
 header) and the number of columns.
 

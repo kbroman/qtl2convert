@@ -4,8 +4,12 @@
 \alias{encode_geno}
 \title{Encode a matrix of genotypes using a set of allele codes}
 \usage{
-encode_geno(geno, allele_codes, output_codes = c("-", "A", "H", "B"),
-  cores = 1)
+encode_geno(
+  geno,
+  allele_codes,
+  output_codes = c("-", "A", "H", "B"),
+  cores = 1
+)
 }
 \arguments{
 \item{geno}{Character matrix of genotypes (rows as markers, columns as individuals)}
