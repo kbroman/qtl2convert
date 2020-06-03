@@ -22,12 +22,10 @@ test_that("find_consensus_geno works multi-core", {
                c("C", "C", "G", "G", "G", "C", "G", "G"))
     expected <- c("A", NA, NA, "G")
     expect_equal(find_consensus_geno(g), expected)
-    expect_equal(find_consensus_geno(g, cores=4), expected)
-    expect_equal(find_consensus_geno(g, cores=0), expected)
+    expect_equal(find_consensus_geno(g, cores=2), expected)
 
     rownames(g) <- names(expected) <- paste0("mar", 1:4)
     expect_equal(find_consensus_geno(g), expected)
-    expect_equal(find_consensus_geno(g, cores=4), expected)
-    expect_equal(find_consensus_geno(g, cores=0), expected)
+    expect_equal(find_consensus_geno(g, cores=2), expected)
 
 })

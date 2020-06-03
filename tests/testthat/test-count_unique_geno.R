@@ -30,12 +30,10 @@ test_that("count_unique_geno works multi-core", {
                c("C", "C",  "G",  "G", NA))
     expected <- c(2,1,3,0,1,2,2)
     expect_equal(count_unique_geno(g), expected)
-    expect_equal(count_unique_geno(g, cores=4), expected)
-    expect_equal(count_unique_geno(g, cores=0), expected)
+    expect_equal(count_unique_geno(g, cores=2), expected)
 
     rownames(g) <- names(expected) <- paste0("mar", 1:7)
     expect_equal(count_unique_geno(g), expected)
-    expect_equal(count_unique_geno(g, cores=4), expected)
-    expect_equal(count_unique_geno(g, cores=0), expected)
+    expect_equal(count_unique_geno(g, cores=2), expected)
 
 })
