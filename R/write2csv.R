@@ -15,6 +15,8 @@
 #' @param overwrite If TRUE, overwrite file if it exists. If FALSE
 #' (the default) and the file exists, stop with an error.
 #'
+#' @return None.
+#'
 #' @details
 #' If the file already exists, the function will refuse to write over it.
 #'

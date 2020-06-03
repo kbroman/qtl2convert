@@ -33,6 +33,9 @@ to be the name for that column.}
 \item{overwrite}{If TRUE, overwrite file if it exists. If FALSE
 (the default) and the file exists, stop with an error.}
 }
+\value{
+None.
+}
 \description{
 Write a data frame to a CSV file in a special form, with info about the number of rows and columns.
 }
