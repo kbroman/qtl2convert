@@ -40,7 +40,8 @@
 #'                 matrix(rnorm(nr*nc), ncol=nc))
 #' colnames(x)[1:nc + 1] <- paste0("col", 1:nc)
 #' \dontrun{
-#' write2csv(x, "/tmp/tmpfile.csv", "A file created by write2csv")}
+#' testfile <- file.path(tempdir(), "tmpfile.csv")
+#' write2csv(x, testfile, "A file created by write2csv")}
 write2csv <-
     function(df, filename, comment="", sep=",", comment.char="#",
              row.names=NULL, overwrite=FALSE)
