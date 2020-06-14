@@ -39,9 +39,12 @@
 #' x <- data.frame(id=paste0("ind", 1:nr),
 #'                 matrix(rnorm(nr*nc), ncol=nc))
 #' colnames(x)[1:nc + 1] <- paste0("col", 1:nc)
-#' \dontrun{
+#'
 #' testfile <- file.path(tempdir(), "tmpfile.csv")
-#' write2csv(x, testfile, "A file created by write2csv")}
+#' write2csv(x, testfile, "A file created by write2csv")
+#'
+#' # Remove the file, to clean up temporary directory
+#' unlink(testfile)
 write2csv <-
     function(df, filename, comment="", sep=",", comment.char="#",
              row.names=NULL, overwrite=FALSE)
