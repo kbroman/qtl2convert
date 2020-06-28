@@ -17,14 +17,9 @@ and [R/qtl](https://rqtl.org) formats.
 
 ### Installation
 
-Install R/qtl2 from [CRAN](https://cran.r-project.org):
+Install the qtl2convert package from [CRAN](https://cran.r-project.org):
 
-    install.packages("qtl2")
-
-Then install the [qtl2convert](https://github.com/rqtl/qtl2convert)
-package from a separate mini-CRAN.
-
-    install.packages("qtl2convert", repos="https://rqtl.org/qtl2cran")
+    install.packages("qtl2convert")
 
 ---
 
