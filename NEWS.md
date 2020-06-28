@@ -1,4 +1,4 @@
-## qtl2convert 0.22-5 (2020-06-26)
+## qtl2convert 0.22-5 (2020-06-28)
 
 ## Minor changes
 

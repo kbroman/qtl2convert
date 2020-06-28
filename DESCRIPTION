@@ -1,12 +1,12 @@
 Package: qtl2convert
 Version: 0.22-5
-Date: 2020-06-26
+Date: 2020-06-28
 Title: Convert Data among QTL Mapping Packages
 Description: Functions to convert data structures among the 'R/qtl2', 'R/qtl', and 'DOQTL' packages.
 Author: Karl W Broman [aut, cre] (<https://orcid.org/0000-0002-4914-6671>)
 Maintainer: Karl W Broman <broman@wisc.edu>
-Authors@R: c(person("Karl W", "Broman", role=c("aut", "cre"),
-             email="broman@wisc.edu", comment=c(ORCID = "0000-0002-4914-6671")))
+Authors@R: person("Karl W", "Broman", role=c("aut", "cre"),
+                  email="broman@wisc.edu", comment=c(ORCID = "0000-0002-4914-6671"))
 Depends:
     R (>= 3.1.0)
 Imports:
@@ -26,5 +26,5 @@ LinkingTo: Rcpp
 LazyData: true
 Encoding: UTF-8
 ByteCompile: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Roxygen: list(markdown=TRUE)
