@@ -6,7 +6,7 @@
 \alias{qtl2convert-package}
 \title{qtl2convert: Convert Data among QTL Mapping Packages}
 \description{
-Functions to convert data structures among the 'R/qtl2', 'R/qtl', and 'DOQTL' packages.
+Functions to convert data structures among the 'qtl2', 'qtl', and 'DOQTL' packages for mapping quantitative trait loci (QTL).
 }
 \section{Vignettes}{
 
