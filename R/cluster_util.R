@@ -17,7 +17,7 @@ n_cores <-
 
 # set up a cluster
 setup_cluster <-
-    function(cores, quiet=TRUE)
+    function(cores)
 {
     if(is_cluster(cores)) return(cores)
 

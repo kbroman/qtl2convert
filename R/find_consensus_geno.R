@@ -35,7 +35,7 @@ function(genotypes, na.strings=c("N", "H", "NA", ""), cores=1)
     # if no rows, return NULL
     if(nrow(genotypes)==0) return(NULL)
 
-    cores <- setup_cluster(cores, quiet=TRUE)
+    cores <- setup_cluster(cores)
 
     by_batch_func <- function(batch) .find_consensus_geno(genotypes[batch,,drop=FALSE])
 

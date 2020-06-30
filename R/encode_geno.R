@@ -46,7 +46,7 @@ function(geno, allele_codes, output_codes=c("-", "A", "H", "B"), cores=1)
                         paste0(allele_codes[,1], allele_codes[,2]), # AB
                         paste0(allele_codes[,2], allele_codes[,1])) # BA
 
-    cores <- setup_cluster(cores, quiet=TRUE)
+    cores <- setup_cluster(cores)
     by_batch_func <- function(batch) .encode_geno(geno[batch,,drop=FALSE], geno_codes[batch,,drop=FALSE],
                                                   output_codes[c(2,4,2,4,3,3)])
     batches <- batch_vec(1:nrow(geno), n_cores=n_cores(cores))
