@@ -24,9 +24,6 @@ hyper <- calc.genoprob(hyper, step=1, error.prob=0.002)
 out <- scanone(hyper)
 out2 <- scan_qtl_to_qtl2(out)
 
-library(qtl2)
-plot(out2$scan1, out2$map)
-
 }
 \seealso{
 \code{\link[=scan_qtl_to_qtl2]{scan_qtl_to_qtl2()}}

@@ -34,7 +34,7 @@ geno <- rbind(c("C", "G", "C",  "GG", "CG"),
               c("A", "A", "AT", "TA", "TT"),
               c("T", "G", NA,   "GT", "TT"))
 codes <- rbind(c("C", "G"), c("A", "T"), c("T", "G"))
-encode_geno(geno, codes)
+geno_encoded <- encode_geno(geno, codes)
 
 }
 \seealso{

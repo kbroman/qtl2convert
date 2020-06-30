@@ -23,7 +23,7 @@
 #'            c("NA", "NA", "NA", "A", "A"),
 #'            c("A",  "A",  "T",  "G", "G"),
 #'            c("C", "C",  "G",  "G", "NA"))
-#' count_unique_geno(g)
+#' counts <- count_unique_geno(g)
 count_unique_geno <-
 function(genotypes, na.strings=c("N", "H", "NA", ""), cores=1)
 {

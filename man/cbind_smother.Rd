@@ -26,5 +26,5 @@ in its place.
 \examples{
 df1 <- data.frame(x=c(1,2,3,NA,4), y=c(5,8,9,10,11), row.names=c("A", "B", "C", "D", "E"))
 df2 <- data.frame(z=c(7,8,0,9,10), y=c(6,NA,NA,9,10), row.names=c("A", "B", "F", "C", "D"))
-cbind_smother(df1, df2)
+df1n2 <- cbind_smother(df1, df2)
 }

@@ -23,7 +23,7 @@
 #'               c("A", "A", "AT", "TA", "TT"),
 #'               c("T", "G", NA,   "GT", "TT"))
 #' codes <- rbind(c("C", "G"), c("A", "T"), c("T", "G"))
-#' encode_geno(geno, codes)
+#' geno_encoded <- encode_geno(geno, codes)
 #'
 encode_geno <-
 function(geno, allele_codes, output_codes=c("-", "A", "H", "B"), cores=1)

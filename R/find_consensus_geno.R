@@ -24,7 +24,7 @@
 #'            c("C",  "C", "G", "G", "A", NA,  NA, NA),
 #'            rep(NA, 8),
 #'            c("C", "C", "G", "G", "G", "C", "G", "G"))
-#' find_consensus_geno(g)
+#' consensus <- find_consensus_geno(g)
 find_consensus_geno <-
 function(genotypes, na.strings=c("N", "H", "NA", ""), cores=1)
 {

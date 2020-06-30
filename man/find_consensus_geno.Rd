@@ -29,7 +29,7 @@ g <- rbind(c("NA", "N", "A", "A", "T", "G", NA, "H"),
            c("C",  "C", "G", "G", "A", NA,  NA, NA),
            rep(NA, 8),
            c("C", "C", "G", "G", "G", "C", "G", "G"))
-find_consensus_geno(g)
+consensus <- find_consensus_geno(g)
 }
 \seealso{
 \code{\link[=find_unique_geno]{find_unique_geno()}}, \code{\link[=encode_geno]{encode_geno()}}

@@ -26,7 +26,7 @@
 #'            c("NA", "NA", "NA", "A", "A"),
 #'            c("A",  "A",  "T",  "G", "G"),
 #'            c("C", "C",  "G",  "G", "NA"))
-#' find_unique_geno(g)
+#' ug <- find_unique_geno(g)
 find_unique_geno <-
 function(genotypes, na.strings=c("N", "H", "NA", ""), cores=1)
 {
