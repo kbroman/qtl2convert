@@ -24,7 +24,7 @@
 #'            c("C",  "C", "G", "G", "A", NA,  NA, NA),
 #'            rep(NA, 8),
 #'            c("C", "C", "G", "G", "G", "C", "G", "G"))
-#' find_consensus_geno(g)
+#' consensus <- find_consensus_geno(g)
 find_consensus_geno <-
 function(genotypes, na.strings=c("N", "H", "NA", ""), cores=1)
 {
@@ -35,7 +35,7 @@ function(genotypes, na.strings=c("N", "H", "NA", ""), cores=1)
     # if no rows, return NULL
     if(nrow(genotypes)==0) return(NULL)
 
-    cores <- setup_cluster(cores, quiet=TRUE)
+    cores <- setup_cluster(cores)
 
     by_batch_func <- function(batch) .find_consensus_geno(genotypes[batch,,drop=FALSE])
 

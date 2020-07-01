@@ -1,3 +1,18 @@
+## qtl2convert 0.22-7 (2020-06-30)
+
+## Minor changes
+
+Cosmetic changes to prepare for posting to CRAN:
+
+- Revise package title and description.
+
+- Revise multi-core tests to never use >2 cores, even locally
+
+- Revise example for write2csv to use R's temporary directory
+
+- Fix link to DOQTL, which is no longer in bioconductor release
+
+
 ## qtl2convert 0.22 (2020-05-21)
 
 ### New features

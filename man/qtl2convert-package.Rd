@@ -4,9 +4,9 @@
 \name{qtl2convert-package}
 \alias{qtl2convert}
 \alias{qtl2convert-package}
-\title{qtl2convert: Convert Data among R/qtl2, R/qtl, and DOQTL}
+\title{qtl2convert: Convert Data among QTL Mapping Packages}
 \description{
-Functions to convert data structures among the R/qtl2, R/qtl, and DOQTL packages.
+Functions to convert data structures among the 'qtl2', 'qtl', and 'DOQTL' packages for mapping quantitative trait loci (QTL).
 }
 \section{Vignettes}{
 
@@ -29,7 +29,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Karl W Broman \email{broman@wisc.edu} (0000-0002-4914-6671)
+\strong{Maintainer}: Karl W Broman \email{broman@wisc.edu} (\href{https://orcid.org/0000-0002-4914-6671}{ORCID})
 
 }
 \keyword{internal}

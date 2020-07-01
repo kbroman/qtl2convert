@@ -4,8 +4,15 @@
 \alias{write2csv}
 \title{Write a data frame to a CSV file}
 \usage{
-write2csv(df, filename, comment = "", sep = ",", comment.char = "#",
-  row.names = NULL, overwrite = FALSE)
+write2csv(
+  df,
+  filename,
+  comment = "",
+  sep = ",",
+  comment.char = "#",
+  row.names = NULL,
+  overwrite = FALSE
+)
 }
 \arguments{
 \item{df}{A data frame (or matrix)}
@@ -26,13 +33,16 @@ to be the name for that column.}
 \item{overwrite}{If TRUE, overwrite file if it exists. If FALSE
 (the default) and the file exists, stop with an error.}
 }
+\value{
+None.
+}
 \description{
 Write a data frame to a CSV file in a special form, with info about the number of rows and columns.
 }
 \details{
 If the file already exists, the function will refuse to write over it.
 
-The file will include comments at the top, using \code{#} as a
+The file will include comments at the top, using \verb{#} as a
 comment character, including the number of rows (not including the
 header) and the number of columns.
 
@@ -48,6 +58,10 @@ nc <- 5
 x <- data.frame(id=paste0("ind", 1:nr),
                 matrix(rnorm(nr*nc), ncol=nc))
 colnames(x)[1:nc + 1] <- paste0("col", 1:nc)
-\dontrun{
-write2csv(x, "/tmp/tmpfile.csv", "A file created by write2csv")}
+
+testfile <- file.path(tempdir(), "tmpfile.csv")
+write2csv(x, testfile, "A file created by write2csv")
+
+# Remove the file, to clean up temporary directory
+unlink(testfile)
 }

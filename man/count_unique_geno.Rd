@@ -4,8 +4,7 @@
 \alias{count_unique_geno}
 \title{Count the unique genotypes for each row of a genotype matrix}
 \usage{
-count_unique_geno(genotypes, na.strings = c("N", "H", "NA", ""),
-  cores = 1)
+count_unique_geno(genotypes, na.strings = c("N", "H", "NA", ""), cores = 1)
 }
 \arguments{
 \item{genotypes}{Matrix of genotypes (markers x individuals)}
@@ -29,7 +28,7 @@ g <- rbind(c("NA", "A",  "A",  "A", "T"),
            c("NA", "NA", "NA", "A", "A"),
            c("A",  "A",  "T",  "G", "G"),
            c("C", "C",  "G",  "G", "NA"))
-count_unique_geno(g)
+counts <- count_unique_geno(g)
 }
 \seealso{
 \code{\link[=find_unique_geno]{find_unique_geno()}}

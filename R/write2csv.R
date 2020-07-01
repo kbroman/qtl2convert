@@ -15,6 +15,8 @@
 #' @param overwrite If TRUE, overwrite file if it exists. If FALSE
 #' (the default) and the file exists, stop with an error.
 #'
+#' @return None.
+#'
 #' @details
 #' If the file already exists, the function will refuse to write over it.
 #'
@@ -37,8 +39,12 @@
 #' x <- data.frame(id=paste0("ind", 1:nr),
 #'                 matrix(rnorm(nr*nc), ncol=nc))
 #' colnames(x)[1:nc + 1] <- paste0("col", 1:nc)
-#' \dontrun{
-#' write2csv(x, "/tmp/tmpfile.csv", "A file created by write2csv")}
+#'
+#' testfile <- file.path(tempdir(), "tmpfile.csv")
+#' write2csv(x, testfile, "A file created by write2csv")
+#'
+#' # Remove the file, to clean up temporary directory
+#' unlink(testfile)
 write2csv <-
     function(df, filename, comment="", sep=",", comment.char="#",
              row.names=NULL, overwrite=FALSE)

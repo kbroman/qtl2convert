@@ -46,15 +46,13 @@ test_that("encode_geno works multi-core", {
                       c("A", "B", "-", "H", "A"))
 
     expect_equal(encode_geno(geno, codes), expected)
-    expect_equal(encode_geno(geno, codes, cores=4), expected)
-    expect_equal(encode_geno(geno, codes, cores=0), expected)
+    expect_equal(encode_geno(geno, codes, cores=2), expected)
 
     expected2 <- gsub("Z", "A",
                       gsub("A", "B",
                            gsub("B", "Z", expected)))
 
     expect_equal(encode_geno(geno, cbind(codes[,2], codes[,1])), expected2)
-    expect_equal(encode_geno(geno, cbind(codes[,2], codes[,1]), cores=4), expected2)
-    expect_equal(encode_geno(geno, cbind(codes[,2], codes[,1]), cores=1), expected2)
+    expect_equal(encode_geno(geno, cbind(codes[,2], codes[,1]), cores=2), expected2)
 
 })

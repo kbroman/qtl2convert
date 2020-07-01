@@ -15,9 +15,6 @@
 #' out <- scanone(hyper)
 #' out2 <- scan_qtl_to_qtl2(out)
 #'
-#' library(qtl2)
-#' plot(out2$scan1, out2$map)
-#'
 #' @seealso [scan_qtl_to_qtl2()]
 #'
 #' @export

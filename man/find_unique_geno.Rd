@@ -4,8 +4,7 @@
 \alias{find_unique_geno}
 \title{Find the unique genotypes for each row of a genotype matrix}
 \usage{
-find_unique_geno(genotypes, na.strings = c("N", "H", "NA", ""),
-  cores = 1)
+find_unique_geno(genotypes, na.strings = c("N", "H", "NA", ""), cores = 1)
 }
 \arguments{
 \item{genotypes}{Matrix of genotypes (markers x individuals)}
@@ -32,7 +31,7 @@ g <- rbind(c("NA", "A",  "A",  "A", "T"),
            c("NA", "NA", "NA", "A", "A"),
            c("A",  "A",  "T",  "G", "G"),
            c("C", "C",  "G",  "G", "NA"))
-find_unique_geno(g)
+ug <- find_unique_geno(g)
 }
 \seealso{
 \code{\link[=count_unique_geno]{count_unique_geno()}}, \code{\link[=encode_geno]{encode_geno()}}

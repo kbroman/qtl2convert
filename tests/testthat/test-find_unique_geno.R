@@ -40,11 +40,9 @@ test_that("find_unique_geno works multi-core", {
                       c("A", "T"),
                       c("C", "G"))
     expect_equal(find_unique_geno(g), expected)
-    expect_equal(find_unique_geno(g, cores=4), expected)
-    expect_equal(find_unique_geno(g, cores=0), expected)
+    expect_equal(find_unique_geno(g, cores=2), expected)
 
     rownames(g) <- rownames(expected) <- paste0("mar", 1:7)
     expect_equal(find_unique_geno(g), expected)
-    expect_equal(find_unique_geno(g, cores=4), expected)
-    expect_equal(find_unique_geno(g, cores=0), expected)
+    expect_equal(find_unique_geno(g, cores=2), expected)
 })

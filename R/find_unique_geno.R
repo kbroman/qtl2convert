@@ -26,7 +26,7 @@
 #'            c("NA", "NA", "NA", "A", "A"),
 #'            c("A",  "A",  "T",  "G", "G"),
 #'            c("C", "C",  "G",  "G", "NA"))
-#' find_unique_geno(g)
+#' ug <- find_unique_geno(g)
 find_unique_geno <-
 function(genotypes, na.strings=c("N", "H", "NA", ""), cores=1)
 {
@@ -38,7 +38,7 @@ function(genotypes, na.strings=c("N", "H", "NA", ""), cores=1)
     # if no rows, return NULL
     if(nrow(genotypes)==0) return(NULL)
 
-    cores <- setup_cluster(cores, quiet=TRUE)
+    cores <- setup_cluster(cores)
 
     by_batch_func <- function(batch) .find_unique_geno(genotypes[batch,,drop=FALSE])
 

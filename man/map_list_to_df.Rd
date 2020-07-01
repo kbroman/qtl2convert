@@ -4,8 +4,12 @@
 \alias{map_list_to_df}
 \title{Marker map list to data frame}
 \usage{
-map_list_to_df(map_list, chr_column = "chr", pos_column = "pos",
-  marker_column = "marker")
+map_list_to_df(
+  map_list,
+  chr_column = "chr",
+  pos_column = "pos",
+  marker_column = "marker"
+)
 }
 \arguments{
 \item{map_list}{List of vectors containing marker positions}

@@ -1,6 +1,7 @@
 ### R/qtl2convert
 
 [![Build Status](https://travis-ci.org/rqtl/qtl2convert.svg?branch=master)](https://travis-ci.org/rqtl/qtl2convert)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/qtl2convert)](https://cran.r-project.org/package=qtl2convert)
 
 [Karl Broman](https://kbroman.org)
 
@@ -17,16 +18,9 @@ and [R/qtl](https://rqtl.org) formats.
 
 ### Installation
 
-Make sure you have the latest version of [R](https://cran.r-project.org).
-Then install R/qtl2 using the following. (For more
-detail, see the instructions at <https://kbroman.org/qtl2>.)
+Install the qtl2convert package from [CRAN](https://cran.r-project.org):
 
-    install.packages("qtl2", repos="https://rqtl.org/qtl2cran")
-
-Then install the [qtl2convert](https://github.com/rqtl/qtl2convert)
-package.
-
-    install.packages("qtl2convert", repos="https://rqtl.org/qtl2cran")
+    install.packages("qtl2convert")
 
 ---
 

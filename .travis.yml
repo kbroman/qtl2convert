@@ -2,12 +2,6 @@ language: r
 sudo: false
 cache: packages
 
-r_packages:
- - devtools
-
-r_github_packages:
- - rqtl/qtl2
-
 warnings_are_errors: true
 
 notifications:
