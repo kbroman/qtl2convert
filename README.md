@@ -1,6 +1,6 @@
 ### R/qtl2convert
 
-[![Build Status](https://travis-ci.org/rqtl/qtl2convert.svg?branch=master)](https://travis-ci.org/rqtl/qtl2convert)
+[![R-CMD-check](https://github.com/rqtl/qtl2convert/workflows/R-CMD-check/badge.svg)](https://github.com/rqtl/qtl2convert/actions)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/qtl2convert)](https://cran.r-project.org/package=qtl2convert)
 
 [Karl Broman](https://kbroman.org)
