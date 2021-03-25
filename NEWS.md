@@ -1,6 +1,14 @@
+## qtl2convert 0.23-1 (2021-03-25)
+
+### Bug fixes
+
+- Needed to fix use of `nchar()` in `encode_geno()` as it no longer
+  works properly with data frames.
+
+
 ## qtl2convert 0.22-7 (2020-06-30)
 
-## Minor changes
+### Minor changes
 
 Cosmetic changes to prepare for posting to CRAN:
 
