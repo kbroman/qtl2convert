@@ -2,9 +2,12 @@
 % Please edit documentation in R/cross2_do_to_genail.R
 \name{cross2_do_to_genail8}
 \alias{cross2_do_to_genail8}
+\alias{cross2_do_to_genail}
 \title{Convert cross2 object from do to genail8}
 \usage{
 cross2_do_to_genail8(cross)
+
+cross2_do_to_genail(cross)
 }
 \arguments{
 \item{cross}{Object of class \code{"cross2"}, as produced by
@@ -23,6 +26,6 @@ file <- paste0("https://raw.githubusercontent.com/rqtl/",
                "qtl2data/master/DOex/DOex.zip")
 DOex <- read_cross2(file)
 
-DOex_genail <- cross2_do_to_genail(DOex)
+DOex_genail <- cross2_do_to_genail8(DOex)
 }
 }

@@ -17,7 +17,7 @@
 #'                "qtl2data/master/DOex/DOex.zip")
 #' DOex <- read_cross2(file)
 #'
-#' DOex_genail <- cross2_do_to_genail(DOex)
+#' DOex_genail <- cross2_do_to_genail8(DOex)
 #' }
 
 cross2_do_to_genail8 <-
@@ -39,3 +39,8 @@ cross2_do_to_genail8 <-
 
     cross
 }
+
+
+#' @rdname cross2_do_to_genail8
+#' @export
+cross2_do_to_genail <- cross2_do_to_genail8

@@ -2,8 +2,9 @@
 
 ### Minor changes
 
-- Added function `cross2_do_to_genail()` for converting a cross2
-  object of type `"do"` to one of type `"genail"`.
+- Added function `cross2_do_to_genail8()` for converting a cross2
+  object of type `"do"` to one of type `"genail8"`. Also present with
+  the alias `cross2_do_to_genail()`.
 
 ### Bug fixes
 
