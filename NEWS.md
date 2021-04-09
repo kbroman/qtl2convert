@@ -1,4 +1,9 @@
-## qtl2convert 0.23-1 (2021-03-25)
+## qtl2convert 0.23-2 (2021-04-09)
+
+### Minor changes
+
+- Added function `cross2_do_to_genail()` for converting a cross2
+  object of type `"do"` to one of type `"genail"`.
 
 ### Bug fixes
 

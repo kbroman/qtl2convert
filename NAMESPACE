@@ -2,6 +2,7 @@
 
 export(cbind_smother)
 export(count_unique_geno)
+export(cross2_do_to_genail8)
 export(encode_geno)
 export(find_consensus_geno)
 export(find_unique_geno)
