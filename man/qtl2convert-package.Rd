@@ -22,7 +22,7 @@ Functions to convert data structures among the 'qtl2', 'qtl', and 'DOQTL' packag
 \seealso{
 Useful links:
 \itemize{
-  \item \url{http://kbroman.org/qtl2}
+  \item \url{https://kbroman.org/qtl2/}
   \item \url{https://github.com/rqtl/qtl2convert}
   \item Report bugs at \url{https://github.com/rqtl/qtl2convert/issues}
 }
