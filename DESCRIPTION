@@ -1,6 +1,6 @@
 Package: qtl2convert
-Version: 0.23-2
-Date: 2021-04-09
+Version: 0.24
+Date: 2021-04-28
 Title: Convert Data among QTL Mapping Packages
 Description: Functions to convert data structures among the 'qtl2', 'qtl', and 'DOQTL' packages for mapping quantitative trait loci (QTL).
 Author: Karl W Broman [aut, cre] (<https://orcid.org/0000-0002-4914-6671>)
@@ -23,7 +23,6 @@ License: GPL-3
 URL: http://kbroman.org/qtl2, https://github.com/rqtl/qtl2convert
 BugReports: https://github.com/rqtl/qtl2convert/issues
 LinkingTo: Rcpp
-LazyData: true
 Encoding: UTF-8
 ByteCompile: true
 RoxygenNote: 7.1.1

@@ -1,10 +1,12 @@
-## qtl2convert 0.23-2 (2021-04-09)
+## qtl2convert 0.24 (2021-04-28)
 
 ### Minor changes
 
 - Added function `cross2_do_to_genail8()` for converting a cross2
   object of type `"do"` to one of type `"genail8"`. Also present with
   the alias `cross2_do_to_genail()`.
+
+- Removed `LazyData` field from DESCRIPTION file
 
 ### Bug fixes
 
