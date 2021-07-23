@@ -54,8 +54,15 @@ cross2_ril_to_genril <-
     # crosstype -> genril
     cross$crosstype <- paste0("genril", n_str)
 
+    # equivalent number of generations
+    if(grepl("^risib", crosstype)) {
+        n_gen <- ceiling((log2(n_str)+4) * 8/7)
+    } else { # selfing or just generally
+        n_gen <- ceiling((log2(n_str)+1) * 8/7)
+    }
+
     # revise cross_info ->
-    new_cross_info <- cbind(as.integer(ceiling(log2(n_str))),
+    new_cross_info <- cbind(n_gen = as.integer(n_gen),
                             matrix(1L, ncol=n_str, nrow=nrow(cross$cross_info)))
     dimnames(new_cross_info) <- list(rownames(cross$cross_info), c("n_gen", LETTERS[seq_len(n_str)]))
     cross$cross_info <- new_cross_info
