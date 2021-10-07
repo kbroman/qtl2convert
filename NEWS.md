@@ -1,4 +1,4 @@
-## qtl2convert 0.25-1 (2021-07-22)
+## qtl2convert 0.26 (2021-10-06)
 
 ### Minor changes
 
