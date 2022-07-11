@@ -1,3 +1,8 @@
+## qtl2convert 0.28 (2022-07-11)
+
+- Fixed typo in the NEWS.md file that results in a Note on CRAN.
+
+
 ## qtl2convert 0.26 (2021-10-06)
 
 ### Minor changes
