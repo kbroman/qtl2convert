@@ -1,6 +1,6 @@
 ### R/qtl2convert
 
-[![R-CMD-check](https://github.com/rqtl/qtl2convert/workflows/R-CMD-check/badge.svg)](https://github.com/rqtl/qtl2convert/actions)
+[![R-CMD-check](https://github.com/rqtl/qtl2convert/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rqtl/qtl2convert/actions/workflows/R-CMD-check.yaml)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/qtl2convert)](https://cran.r-project.org/package=qtl2convert)
 [![zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3237774.svg)](https://doi.org/10.5281/zenodo.3237774)
 
