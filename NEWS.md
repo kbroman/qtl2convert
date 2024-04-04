@@ -1,4 +1,13 @@
+## qtl2convert 0.29-1 (2024-04-04)
+
+### Bug fixes
+
+- Fixed a bug in `probs_doqtl_to_qtl2()`
+
+
 ## qtl2convert 0.28 (2022-07-11)
+
+### Minor changes
 
 - Fixed typo in the NEWS.md file that results in a Note on CRAN.
 
