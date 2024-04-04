@@ -123,11 +123,11 @@ probs_doqtl_to_qtl2 <-
             dimnames(newprobs[[i]]) <- list(rownames(probs),
                                             c(new_geno_labels, paste0(LETTERS[1:8], "Y")),
                                             dimnames(probs)[[3]][chr==i])
+            hom <- paste0(LETTERS[1:8], LETTERS[1:8])
 
             if(is.null(is_female)) { # need to guess sex
                 het_tolerance <- 1e-4
 
-                hom <- paste0(LETTERS[1:8], LETTERS[1:8])
                 het <- old_geno_labels[!(old_geno_labels %in% hom)]
                 sum_het <- apply(probs[,het,chr==i,drop=FALSE], 1, sum)/dim(probs)[[3]]
                 is_female <- setNames((sum_het > het_tolerance), rownames(probs))
