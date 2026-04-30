@@ -1,3 +1,11 @@
+## qtl2convert 0.31-1 (2026-04-30)
+
+### Bug fixes
+
+- Problem in encode_geno() showing up on CRAN: needed to change
+  (a==b) to !strcmp(a, b).
+
+
 ## qtl2convert 0.30 (2024-04-04)
 
 ### Bug fixes

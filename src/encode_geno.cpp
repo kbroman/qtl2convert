@@ -32,7 +32,7 @@ StringMatrix encode_geno(const StringMatrix& g,
             else {
                 bool unassigned=true;
                 for(int codei=0; codei<n_code; codei++) {
-                    if(g(mar,ind)==old_values(mar,codei)) {
+                    if(!strcmp(g(mar,ind), old_values(mar,codei))) {
                         unassigned=false;
                         result(mar,ind) = new_values[codei];
                     }
