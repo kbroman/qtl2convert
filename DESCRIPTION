@@ -25,5 +25,5 @@ BugReports: https://github.com/rqtl/qtl2convert/issues
 LinkingTo: Rcpp
 Encoding: UTF-8
 ByteCompile: true
-RoxygenNote: 7.3.3
 Roxygen: list(markdown=TRUE)
+Config/roxygen2/version: 8.0.0
