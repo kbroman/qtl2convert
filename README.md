@@ -2,6 +2,7 @@
 
 [![R-CMD-check](https://github.com/rqtl/qtl2convert/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rqtl/qtl2convert/actions/workflows/R-CMD-check.yaml)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/qtl2convert)](https://cran.r-project.org/package=qtl2convert)
+[![r-universe badge](https://rqtl.r-universe.dev/qtl2convert/badges/version)](https://rqtl.r-universe.dev/qtl2convert)
 [![zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3237774.svg)](https://doi.org/10.5281/zenodo.3237774)
 
 [Karl Broman](https://kbroman.org)
@@ -22,6 +23,22 @@ and [R/qtl](https://rqtl.org) formats.
 Install the qtl2convert package from [CRAN](https://cran.r-project.org):
 
     install.packages("qtl2convert")
+
+
+Alternatively, install it from [R
+universe](https://rqtl.r-universe.dev):
+
+```r
+install.packages("qtl2convert", repos=c("https://rqtl.r-universe.dev",
+                                        "https://cloud.r-project.org"))
+```
+
+Or use [remotes](https://remotes.r-lib.org) to install it from its GitHub source:
+
+```r
+install.packages("remotes")
+remotes::install_github("rqtl/qtl2convert")
+```
 
 ---
 
