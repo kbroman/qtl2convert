@@ -22,8 +22,9 @@ and [R/qtl](https://rqtl.org) formats.
 
 Install the qtl2convert package from [CRAN](https://cran.r-project.org):
 
-    install.packages("qtl2convert")
-
+```r
+install.packages("qtl2convert")
+```
 
 Alternatively, install it from [R
 universe](https://rqtl.r-universe.dev):
