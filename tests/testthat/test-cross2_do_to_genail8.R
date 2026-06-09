@@ -3,6 +3,8 @@ context("cross2_do_to_genail")
 test_that("cross2_do_to_genail works", {
     if(isnt_karl()) skip("this test only run locally")
 
+    library(qtl2)
+
     file <- paste0("https://raw.githubusercontent.com/rqtl/",
                    "qtl2data/master/DOex/DOex.zip")
     DOex <- read_cross2(file)

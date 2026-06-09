@@ -35,6 +35,8 @@ test_that("probs_doqtl_to_qtl2 works", {
 test_that("probs convert between DOQTL and R/qtl2", {
     if(isnt_karl()) skip("this test only run locally")
 
+    library(qtl2)
+
     file <- paste0("https://raw.githubusercontent.com/rqtl/",
                    "qtl2data/master/DOex/DOex.zip")
     DOex <- read_cross2(file)
