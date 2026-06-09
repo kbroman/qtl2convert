@@ -1,4 +1,4 @@
-## qtl2convert 0.33-1 (2026-06-09)
+## qtl2convert 0.34 (2026-06-09)
 
 ### Bug fixes
 
