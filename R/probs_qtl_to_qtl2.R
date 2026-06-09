@@ -63,7 +63,11 @@ probs_qtl_to_qtl2 <-
     names(pr) <- names(map) <- chr
     ids <- qtl::getid(cross)
     if(is.null(ids)) ids <- 1:qtl::nind(cross)
-    for(i in seq_along(pr)) rownames(pr[[i]]) <- ids
+    for(i in seq_along(pr)) {
+        rownames(pr[[i]]) <- ids
+        clear_attr <- c("map", "error.prob", "step", "off.end", "map.function", "stepwidth")
+        for(a in clear_attr) attr(pr[[i]], a) <- NULL
+    }
 
     attr(pr, "crosstype") <- crosstype
     attr(pr, "is_x_chr") <- is_x_chr

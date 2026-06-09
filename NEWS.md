@@ -1,3 +1,12 @@
+## qtl2convert 0.33-1 (2026-06-09)
+
+### Bug fixes
+
+- In `probs_qtl_to_qtl2()`, need to clear a bunch of attributes that
+  previously weren't preserved in R, but in R-devel (4.7) they now
+  are. (Issue #24)
+
+
 ## qtl2convert 0.32 (2026-04-30)
 
 ### Bug fixes
