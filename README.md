@@ -41,6 +41,6 @@ remotes::install_github("rqtl/qtl2convert")
 
 ---
 
-#### License
+### License
 
 Licensed under [GPL-3](https://www.r-project.org/Licenses/GPL-3).
