@@ -1,3 +1,12 @@
+## qtl2convert 0.35-1 (2026-07-11)
+
+### Minor changes
+
+- For parallel computing, use of `cores=0` argument now results in all
+  but one core (`parallel::detectCores()-1`) rather than **all**
+  cores.
+
+
 ## qtl2convert 0.34 (2026-06-09)
 
 ### Bug fixes
