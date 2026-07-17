@@ -1,4 +1,4 @@
-## qtl2convert 0.35-2 (2026-07-16)
+## qtl2convert 0.36 (2026-07-17)
 
 ### Minor changes
 
@@ -6,7 +6,7 @@
   but one core (`parallel::detectCores()-1`) rather than **all**
   cores.
 
-- Small change to tests to avoid Note on CRAN
+- Small change to tests to avoid Note on CRAN.
 
 
 ## qtl2convert 0.34 (2026-06-09)
